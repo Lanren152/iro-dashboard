@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>投资研究看板 · 2026-08-07 11:19</title>
+<style>
+:root{--bg:#f3f1eb;--paper:#fbfaf6;--ink:#1c211c;--muted:#71766d;--line:#dedbd2;--accent:#294b38;--soft:#e6ebe4;--warn:#8a5d2e}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Noto Sans SC","PingFang SC",system-ui,sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(#847e70 .5px,transparent .5px);background-size:8px 8px}
+main{width:min(1440px,calc(100% - 48px));margin:0 auto;padding:42px 0 60px;position:relative}
+header{display:flex;justify-content:space-between;gap:40px;align-items:flex-end;border-bottom:1px solid var(--line);padding-bottom:30px}
+h1{font-size:clamp(30px,4vw,52px);letter-spacing:-.055em;line-height:1.05;max-width:850px;margin:9px 0 18px;font-weight:620}
+header p{max-width:800px;color:var(--muted);line-height:1.75;margin:0}
+.eyebrow{font-size:12px;letter-spacing:.2em;color:var(--accent);font-weight:700}
+.meta-line{font:12px ui-monospace;color:#9a9b94}
+.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:24px 0}
+.stat{background:rgba(251,250,246,.82);border:1px solid var(--line);border-radius:16px;padding:18px}
+.stat strong{font-size:25px;display:block;letter-spacing:-.04em}
+.stat span{color:var(--muted);font-size:12px}
+.grid{display:grid;grid-template-columns:1.45fr .75fr;gap:16px}
+.panel{background:rgba(251,250,246,.88);border:1px solid var(--line);border-radius:19px;padding:22px}
+.wide{grid-row:span 2}
+.panel-head{display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:17px;border-bottom:1px solid var(--line)}
+.panel-head span{font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.panel-head h2{font-size:22px;margin:4px 0 0;letter-spacing:-.035em}
+.panel-head small{color:var(--muted)}
+.opp{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line);align-items:start}
+.opp:last-child{border-bottom:0}
+.score-box{text-align:center;background:var(--soft);border-radius:14px;padding:14px 6px}
+.score-box strong{display:block;font-size:30px;letter-spacing:-.05em;color:var(--accent)}
+.score-box span{font-size:10px;color:var(--muted)}
+.opp h3{margin:0 0 8px;font-size:18px;letter-spacing:-.02em}
+.opp p{margin:0 0 12px;color:var(--muted);line-height:1.6;font-size:13px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tag{font-size:11px;padding:4px 9px;border-radius:99px;background:#eceae3;color:#5d625a}
+.tag.g{background:#dfe9e0;color:#294b38}.tag.y{background:#eee4d5;color:#7f592b}.tag.r{background:#f0ded9;color:#8a352f}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:7px 14px;font-size:13px}
+.kv dt{color:var(--muted)}.kv dd{margin:0;color:var(--ink)}
+.falsify{background:#f4eee4;border-radius:12px;padding:13px 15px;font-size:12px;color:#7f592b;line-height:1.55}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em;padding:9px 8px;border-bottom:1px solid var(--line)}
+td{padding:10px 8px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+td.num{font:13px ui-monospace;text-align:right}
+.pos{color:#2f6f3f}.neg{color:#a03c32}
+.bar{height:6px;border-radius:3px;background:var(--soft);overflow:hidden;margin-top:5px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:3px}
+.chart-wrap{position:relative;height:260px}
+.sector-cloud{display:flex;flex-wrap:wrap;gap:8px;padding-top:14px}
+.sector-cloud span{padding:7px 10px;border:1px solid var(--line);border-radius:8px;font-size:12px;background:#f5f3ed}
+.empty{padding:32px 8px;color:var(--muted);font-size:13px}
+footer{border-top:1px solid var(--line);margin-top:34px;padding-top:20px;color:var(--muted);font-size:12px;line-height:1.6}
+@media(max-width:1000px){main{width:min(100% - 24px,760px);padding-top:24px}.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.wide{grid-row:auto}}
+@media(max-width:520px){.stats{grid-template-columns:1fr 1fr}.stat strong{font-size:20px}.opp{grid-template-columns:1fr}.score-box{text-align:left;display:flex;gap:10px;align-items:baseline}.score-box strong{font-size:24px}}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <div class="eyebrow">INVESTMENT RESEARCH OS · 静态快照</div>
+      <h1>全市场机会发现与证据研究</h1>
+      <p>市场驱动与公司驱动双入口，自动完成证据验证、利润传导、公司映射、三情景盈利模型、市场隐含预期、反方审查和持续监控。此页为静态导出，数据内嵌，无需后端。</p>
+      <div class="meta-line">生成时间：2026-08-07 11:19</div>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div class="stat"><strong>40</strong><span>一级行业</span></div>
+    <div class="stat"><strong>5612</strong><span>覆盖公司</span></div>
+    <div class="stat"><strong>1194</strong><span>财务快照</span></div>
+    <div class="stat"><strong>3297</strong><span>指标观测</span></div>
+    <div class="stat"><strong>3759</strong><span>预告/公告</span></div>
+    <div class="stat"><strong>1</strong><span>研究机会</span></div>
+  </section>
+
+  <section class="grid">
+    <div class="panel wide">
+      <div class="panel-head"><span>Opportunities</span><h2>研究机会</h2></div>
+      
+<article class="opp">
+  <div class="score-box"><strong>66.00</strong><span>score / 42% conf</span></div>
+  <div>
+    <h3>东瑞股份：订单与利润加速</h3>
+    <div class="tags">
+      <span class="tag y">深度研究</span>
+      <span class="tag">公司驱动</span>
+      <span class="tag">31</span>
+    </div>
+    <p>证据不足，继续观察。</p>
+    <dl class="kv">
+      <dt>触发公司</dt><dd>001201 东瑞股份</dd>
+      <dt>利润传导</dt><dd>需求/订单→销量，价差/利用率→单位利润，现金流验证增长质量。</dd>
+      <dt>市场定价</dt><dd>缺少可计算的公司市场价格、EPS或盈利模型。</dd>
+    </dl>
+    <div class="falsify"><b>证伪条件：</b>若出现则判断失效<br>
+      <ul style="margin:6px 0 0;padding-left:18px"><li>关键指标连续两个周期反向</li><li> 供给增速显著超过需求增速</li></ul>
+    </div>
+  </div>
+</article>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><span>Forecasts</span><h2>业绩预告分布</h2></div>
+      
+<div class="chart-wrap"><canvas id="fc"></canvas></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.getElementById('fc');
+  if (!el || typeof Chart === 'undefined') return;
+  new Chart(el, { type: 'bar', data: {
+    labels: ["预增", "首亏", "增亏", "减亏", "扭亏", "预减", "略增", "续亏", "略减", "续盈"],
+    datasets: [{ label: '预告公司数', data: [1083, 522, 499, 449, 400, 384, 180, 144, 62, 25],
+      backgroundColor: '#294b38', borderRadius: 6, barPercentage: .7 }]
+  }, options: { responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, title: { display: true, text: '业绩预告类型分布（全市场）', font: { size: 13 } } },
+    scales: { y: { beginAtZero: true } } } });
+});
+</script>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><span>Sectors</span><h2>行业覆盖</h2></div>
+      <div class="sector-cloud"><span>综合 <b style='font:10px ui-monospace;color:#989b94'>5540</b></span><span>互联网平台 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>交通运输 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>传媒 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>低空经济与航空服务 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>公用事业 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>农林牧渔 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>医药生物 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>商贸零售 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>国防军工 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>基础化工 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>基础设施REITs <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>家用电器 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>建筑材料 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>建筑装饰 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>房地产 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>新材料 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>机械设备 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>汽车 <b style='font:10px ui-monospace;color:#989b94'>2</b></span><span>煤炭 <b style='font:10px ui-monospace;color:#989b94'>2</b></span></div>
+    </div>
+  </section>
+
+  <section class="panel" style="margin-top:16px">
+    <div class="panel-head"><span>Deep-dive</span><h2>深挖公司财务（最近一期）</h2>
+      <small>触发利润变化的公司，按预告幅度降序深挖</small></div>
+    <table>
+      <thead><tr><th>代码</th><th>公司</th><th>净利润</th><th>利润增速</th><th>收入增速</th><th>经营现金流</th><th>订单增速</th></tr></thead>
+      <tbody><tr><td>301308</td><td>江波龙</td><td class='num'>39.8亿</td><td class='num'><span class="neg">-2884.3%</span></td><td class='num'><span class="pos">+132.8%</span></td><td class='num'>-28.7亿</td><td class='num'><span class="pos">+1083.2%</span></td></tr><tr><td>002466</td><td>天齐锂业</td><td class='num'>28.4亿</td><td class='num'><span class="pos">+263.1%</span></td><td class='num'><span class="pos">+98.4%</span></td><td class='num'>2.6亿</td><td class='num'><span class="neg">-22.7%</span></td></tr><tr><td>002738</td><td>中矿资源</td><td class='num'>5.5亿</td><td class='num'><span class="pos">+309.8%</span></td><td class='num'><span class="neg">-10.4%</span></td><td class='num'>2169万</td><td class='num'><span class="pos">+38.8%</span></td></tr><tr><td>600292</td><td>电投水电</td><td class='num'>4.7亿</td><td class='num'><span class="pos">+899.3%</span></td><td class='num'><span class="pos">+181.6%</span></td><td class='num'>5.2亿</td><td class='num'><span class="pos">+9.4%</span></td></tr><tr><td>688308</td><td>欧科亿</td><td class='num'>2.0亿</td><td class='num'><span class="pos">+2954.8%</span></td><td class='num'><span class="pos">+113.5%</span></td><td class='num'>-2.2亿</td><td class='num'><span class="pos">+73.0%</span></td></tr><tr><td>002389</td><td>航天彩虹</td><td class='num'>9967万</td><td class='num'><span class="neg">-423.3%</span></td><td class='num'><span class="pos">+18.5%</span></td><td class='num'>-2.3亿</td><td class='num'><span class="pos">+161.8%</span></td></tr><tr><td>600212</td><td>绿能慧充</td><td class='num'>-2085万</td><td class='num'><span class="pos">+147.0%</span></td><td class='num'><span class="pos">+48.2%</span></td><td class='num'>-5088万</td><td class='num'><span class="pos">+116.8%</span></td></tr><tr><td>002368</td><td>太极股份</td><td class='num'>-1.2亿</td><td class='num'><span class="neg">-837.6%</span></td><td class='num'><span class="neg">-36.6%</span></td><td class='num'>-15.3亿</td><td class='num'><span class="pos">+13.0%</span></td></tr><tr><td>300765</td><td>石药创新</td><td class='num'>-1.3亿</td><td class='num'><span class="neg">-8.8%</span></td><td class='num'><span class="pos">+40.8%</span></td><td class='num'>-1.8亿</td><td class='num'><span class="pos">+8.2%</span></td></tr><tr><td>001201</td><td>东瑞股份</td><td class='num'>-1.9亿</td><td class='num'><span class="pos">+3180.1%</span></td><td class='num'><span class="pos">+26.0%</span></td><td class='num'>3321万</td><td class='num'><span class="pos">+612.3%</span></td></tr></tbody>
+    </table>
+  </section>
+
+  <footer>
+    投资研究 OS v0.3 · 数据源：akshare 免费接口 · 免责声明：此页为研究系统输出，不构成投资建议。前瞻判断存在不确定性，请独立验证后再做决策。
+  </footer>
+</main>
+</body>
+</html>
