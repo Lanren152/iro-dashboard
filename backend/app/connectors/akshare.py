@@ -26,7 +26,7 @@ from __future__ import annotations
 import hashlib
 import json
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -156,9 +156,18 @@ class AkshareConnector:
         if not report_date:
             today = datetime.now(timezone.utc)
             report_date = f"{today.year}0630" if today.month >= 7 else f"{today.year - 1}1231"
-        try:
-            df = ak.stock_yjyg_em(date=report_date)
-        except Exception:
+        # The EM endpoint is intermittently blocked from cloud runners, so
+        # retry before falling back to the prior period.
+        df = None
+        for attempt in range(3):
+            try:
+                df = ak.stock_yjyg_em(date=report_date)
+                break
+            except Exception as exc:  # noqa: BLE001 - retry then try prior period
+                print(f"[akshare] stock_yjyg_em({report_date}) attempt {attempt + 1} failed: {exc}")
+                if attempt < 2:
+                    time.sleep(2)
+        if df is None or len(df) == 0:
             # The requested period may have no forecasts yet; try the prior one.
             alt = f"{int(report_date[:4]) - 1}1231"
             df = ak.stock_yjyg_em(date=alt)
@@ -218,8 +227,23 @@ class AkshareConnector:
     def fetch_companies(self) -> list[CompanyInput]:
         if self._companies_cache is not None:
             return self._companies_cache
+        # Primary: akshare/EM full A-share list. EM is intermittently blocked
+        # from cloud runners (ConnectionReset), so retry then fall back to
+        # baostock's query_all_stock (verified reachable from GitHub Actions).
+        df = None
         ak = self._ak()
-        df = ak.stock_info_a_code_name()
+        for attempt in range(3):
+            try:
+                df = ak.stock_info_a_code_name()
+                break
+            except Exception as exc:  # noqa: BLE001 - retry then fall back
+                print(f"[akshare] stock_info_a_code_name attempt {attempt + 1} failed: {exc}")
+                if attempt < 2:
+                    time.sleep(2)
+        source = "akshare stock_info_a_code_name"
+        if df is None or len(df) == 0:
+            df = self._baostock_all_stocks()
+            source = "baostock query_all_stock"
         out: list[CompanyInput] = []
         for row in df.to_dict("records"):
             ticker = str(row.get("code") or "").strip()
@@ -235,12 +259,53 @@ class AkshareConnector:
                     name=name,
                     exchange=exchange,
                     sector_code=self.fallback_sector,
-                    description="来源：akshare stock_info_a_code_name",
+                    description=f"来源：{source}",
                     is_demo=False,
                 )
             )
         self._companies_cache = out
         return out
+
+    def _baostock_all_stocks(self) -> Any:
+        """Fallback full A-share list via baostock (cloud-reachable).
+
+        Returns a pandas DataFrame with columns code/name, mirroring the
+        akshare list shape (code without exchange prefix, plain name).
+        """
+        import baostock as bs
+
+        lg = bs.login()
+        if lg.error_code != "0":
+            raise RuntimeError(f"baostock login failed: {lg.error_msg}")
+        try:
+            import pandas as pd
+
+            # baostock requires an explicit trading day; walk back to the most
+            # recent weekday (skips weekends; A-share holidays are rare enough
+            # that the weekday fallback is acceptable for the security master).
+            day = datetime.now()
+            for _ in range(10):
+                if day.weekday() < 5:  # Mon-Fri
+                    break
+                day = day - timedelta(days=1)
+            rs = bs.query_all_stock(day=day.strftime("%Y-%m-%d"))
+            rows = []
+            while (rs.error_code == "0") and rs.next():
+                row = rs.get_row_data()
+                # row: [code('sh.600519'), tradeStatus, name]
+                code = row[0]
+                name = row[2]
+                # Keep A-share stocks (drop indices like sh.000001 which are
+                # index codes too; baostock marks tradeStatus='1' for all).
+                if code.startswith(("sh.6", "sh.68", "sz.0", "sz.3", "bj.")):
+                    # Strip the exchange prefix: sh.600519 -> 600519
+                    rows.append({"code": code.split(".")[-1], "name": name})
+            return pd.DataFrame(rows)
+        finally:
+            try:
+                bs.logout()
+            except Exception:
+                pass
 
     def fetch_company_memberships(self) -> list[CompanySectorMembershipInput]:
         if self._membership_cache is not None:
