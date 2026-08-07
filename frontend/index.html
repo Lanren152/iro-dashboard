@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Evidence-first full-market investment research system" />
+  <title>Investment Research OS</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <div class="eyebrow">INVESTMENT RESEARCH OS</div>
+        <h1>全市场机会发现与证据研究系统</h1>
+        <p>市场驱动与公司驱动双入口，自动完成证据验证、利润传导、公司映射、三情景盈利模型、市场隐含预期、反方审查和持续监控。</p>
+      </div>
+      <button id="run-cycle" class="run">运行完整研究周期</button>
+    </header>
+
+    <section id="status" class="status hidden"></section>
+    <section id="stats" class="stats"></section>
+
+    <section class="grid">
+      <div class="panel wide">
+        <div class="panel-head"><div><span>机会队列</span><h2>全市场排名</h2></div><small>点击查看证据、公司与状态历史</small></div>
+        <div id="opportunities" class="opportunity-list"><div class="empty">正在读取系统状态…</div></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div><span>异常处理</span><h2>待处理事项</h2></div><small>只显示例外</small></div>
+        <div id="alerts" class="compact-list"><div class="empty">暂无异常</div></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div><span>研究简报</span><h2>最近报告</h2></div></div>
+        <div id="reports" class="compact-list"><div class="empty">尚无报告</div></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div><span>系统覆盖</span><h2>行业地图</h2></div><small>一级行业与跨行业主题</small></div>
+        <div id="sectors" class="sector-cloud"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div><span>运行审计</span><h2>Agent 记录</h2></div></div>
+        <div id="runs" class="runs"><div class="empty">尚无运行记录</div></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="drawer-backdrop" class="drawer-backdrop hidden"></div>
+  <aside id="drawer" class="drawer hidden" aria-live="polite">
+    <button id="drawer-close" class="drawer-close">关闭</button>
+    <div id="drawer-content"></div>
+  </aside>
+  <script src="./app.js"></script>
+</body>
+</html>

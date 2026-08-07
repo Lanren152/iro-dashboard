@@ -1,0 +1,41 @@
+{
+  "seed": {
+    "sectors": 40,
+    "metric_definitions": 240,
+    "companies": 74,
+    "memberships": 74,
+    "company_snapshots": 592,
+    "metrics": 3240,
+    "documents": 5
+  },
+  "first_cycle": {
+    "radar_count": 10,
+    "processed_count": 10,
+    "failed_count": 0,
+    "duration_ms": 756
+  },
+  "second_cycle": {
+    "radar_count": 10,
+    "processed_count": 10,
+    "failed_count": 0,
+    "duration_ms": 337
+  },
+  "database_counts": {
+    "companies": 74,
+    "company_snapshots": 592,
+    "opportunities": 10,
+    "market_origin": 5,
+    "company_origin": 5,
+    "evidence": 65,
+    "profit_drivers": 60,
+    "market_expectations": 5,
+    "reports": 2,
+    "alerts": 0,
+    "agent_runs": 100,
+    "state_transitions": 30
+  },
+  "notes": [
+    "All records in this validation database are DEMO synthetic data.",
+    "No live-data connector or broker execution was used."
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "ticker": "DEMO001",
+    "name": "示例电网设备公司",
+    "exchange": "DEMO",
+    "sector_code": "38",
+    "description": "演示公司，不对应真实证券",
+    "market_cap": 320.0,
+    "pe": 24.0,
+    "is_demo": true
+  },
+  {
+    "ticker": "DEMO002",
+    "name": "示例工业自动化公司",
+    "exchange": "DEMO",
+    "sector_code": "35",
+    "description": "演示公司，不对应真实证券",
+    "market_cap": 180.0,
+    "pe": 31.0,
+    "is_demo": true
+  },
+  {
+    "ticker": "DEMO003",
+    "name": "示例创新药公司",
+    "exchange": "DEMO",
+    "sector_code": "39",
+    "description": "演示公司，不对应真实证券",
+    "market_cap": 210.0,
+    "pe": null,
+    "is_demo": true
+  },
+  {
+    "ticker": "DEMO004",
+    "name": "示例有色资源公司",
+    "exchange": "DEMO",
+    "sector_code": "06",
+    "description": "演示公司，不对应真实证券",
+    "market_cap": 480.0,
+    "pe": 15.0,
+    "is_demo": true
+  },
+  {
+    "ticker": "DEMO005",
+    "name": "示例食品连锁公司",
+    "exchange": "DEMO",
+    "sector_code": "40",
+    "description": "演示公司，不对应真实证券",
+    "market_cap": 90.0,
+    "pe": 22.0,
+    "is_demo": true
+  },
+  {
+    "ticker": "DEMO006",
+    "name": "示例半导体设备公司",
+    "exchange": "DEMO",
+    "sector_code": "25",
+    "description": "演示公司，不对应真实证券",
+    "market_cap": 650.0,
+    "pe": 48.0,
+    "is_demo": true
+  }
+]

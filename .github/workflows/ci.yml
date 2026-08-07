@@ -1,0 +1,17 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.13'}
+      - run: pip install -r backend/requirements.txt
+      - run: PYTHONPATH=backend pytest -q backend/tests
+      - run: ruff check backend
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: test -s frontend/index.html && test -s frontend/app.js && test -s frontend/styles.css

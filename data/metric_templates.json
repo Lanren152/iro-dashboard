@@ -1,0 +1,2162 @@
+[
+  {
+    "sector_code": "01",
+    "code": "01_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "01",
+    "code": "01_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "01",
+    "code": "01_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "01",
+    "code": "01_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "01",
+    "code": "01_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "01",
+    "code": "01_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "02",
+    "code": "02_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "02",
+    "code": "02_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "02",
+    "code": "02_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "02",
+    "code": "02_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "02",
+    "code": "02_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "02",
+    "code": "02_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "03",
+    "code": "03_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "03",
+    "code": "03_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "03",
+    "code": "03_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "03",
+    "code": "03_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "03",
+    "code": "03_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "03",
+    "code": "03_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "04",
+    "code": "04_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "04",
+    "code": "04_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "04",
+    "code": "04_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "04",
+    "code": "04_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "04",
+    "code": "04_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "04",
+    "code": "04_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "05",
+    "code": "05_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "05",
+    "code": "05_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "05",
+    "code": "05_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "05",
+    "code": "05_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "05",
+    "code": "05_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "05",
+    "code": "05_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "06",
+    "code": "06_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "06",
+    "code": "06_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "06",
+    "code": "06_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "06",
+    "code": "06_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "06",
+    "code": "06_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "06",
+    "code": "06_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "07",
+    "code": "07_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "07",
+    "code": "07_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "07",
+    "code": "07_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "07",
+    "code": "07_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "07",
+    "code": "07_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "07",
+    "code": "07_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "08",
+    "code": "08_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "08",
+    "code": "08_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "08",
+    "code": "08_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "08",
+    "code": "08_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "08",
+    "code": "08_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "08",
+    "code": "08_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "09",
+    "code": "09_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "09",
+    "code": "09_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "09",
+    "code": "09_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "09",
+    "code": "09_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "09",
+    "code": "09_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "09",
+    "code": "09_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "10",
+    "code": "10_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "10",
+    "code": "10_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "10",
+    "code": "10_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "10",
+    "code": "10_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "10",
+    "code": "10_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "10",
+    "code": "10_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "11",
+    "code": "11_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "11",
+    "code": "11_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "11",
+    "code": "11_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "11",
+    "code": "11_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "11",
+    "code": "11_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "11",
+    "code": "11_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "12",
+    "code": "12_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "12",
+    "code": "12_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "12",
+    "code": "12_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "12",
+    "code": "12_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "12",
+    "code": "12_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "12",
+    "code": "12_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "13",
+    "code": "13_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "13",
+    "code": "13_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "13",
+    "code": "13_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "13",
+    "code": "13_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "13",
+    "code": "13_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "13",
+    "code": "13_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "14",
+    "code": "14_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "14",
+    "code": "14_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "14",
+    "code": "14_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "14",
+    "code": "14_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "14",
+    "code": "14_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "14",
+    "code": "14_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "15",
+    "code": "15_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "15",
+    "code": "15_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "15",
+    "code": "15_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "15",
+    "code": "15_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "15",
+    "code": "15_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "15",
+    "code": "15_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "16",
+    "code": "16_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "16",
+    "code": "16_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "16",
+    "code": "16_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "16",
+    "code": "16_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "16",
+    "code": "16_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "16",
+    "code": "16_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "17",
+    "code": "17_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "17",
+    "code": "17_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "17",
+    "code": "17_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "17",
+    "code": "17_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "17",
+    "code": "17_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "17",
+    "code": "17_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "18",
+    "code": "18_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "18",
+    "code": "18_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "18",
+    "code": "18_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "18",
+    "code": "18_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "18",
+    "code": "18_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "18",
+    "code": "18_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "19",
+    "code": "19_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "19",
+    "code": "19_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "19",
+    "code": "19_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "19",
+    "code": "19_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "19",
+    "code": "19_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "19",
+    "code": "19_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "20",
+    "code": "20_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "20",
+    "code": "20_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "20",
+    "code": "20_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "20",
+    "code": "20_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "20",
+    "code": "20_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "20",
+    "code": "20_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "21",
+    "code": "21_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "21",
+    "code": "21_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "21",
+    "code": "21_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "21",
+    "code": "21_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "21",
+    "code": "21_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "21",
+    "code": "21_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "22",
+    "code": "22_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "22",
+    "code": "22_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "22",
+    "code": "22_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "22",
+    "code": "22_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "22",
+    "code": "22_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "22",
+    "code": "22_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "23",
+    "code": "23_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "23",
+    "code": "23_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "23",
+    "code": "23_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "23",
+    "code": "23_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "23",
+    "code": "23_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "23",
+    "code": "23_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "24",
+    "code": "24_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "24",
+    "code": "24_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "24",
+    "code": "24_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "24",
+    "code": "24_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "24",
+    "code": "24_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "24",
+    "code": "24_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "25",
+    "code": "25_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "25",
+    "code": "25_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "25",
+    "code": "25_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "25",
+    "code": "25_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "25",
+    "code": "25_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "25",
+    "code": "25_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "26",
+    "code": "26_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "26",
+    "code": "26_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "26",
+    "code": "26_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "26",
+    "code": "26_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "26",
+    "code": "26_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "26",
+    "code": "26_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "27",
+    "code": "27_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "27",
+    "code": "27_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "27",
+    "code": "27_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "27",
+    "code": "27_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "27",
+    "code": "27_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "27",
+    "code": "27_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "28",
+    "code": "28_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "28",
+    "code": "28_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "28",
+    "code": "28_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "28",
+    "code": "28_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "28",
+    "code": "28_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "28",
+    "code": "28_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "29",
+    "code": "29_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "29",
+    "code": "29_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "29",
+    "code": "29_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "29",
+    "code": "29_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "29",
+    "code": "29_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "29",
+    "code": "29_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "30",
+    "code": "30_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "30",
+    "code": "30_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "30",
+    "code": "30_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "30",
+    "code": "30_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "30",
+    "code": "30_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "30",
+    "code": "30_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "31",
+    "code": "31_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "31",
+    "code": "31_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "31",
+    "code": "31_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "31",
+    "code": "31_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "31",
+    "code": "31_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "31",
+    "code": "31_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "32",
+    "code": "32_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "32",
+    "code": "32_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "32",
+    "code": "32_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "32",
+    "code": "32_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "32",
+    "code": "32_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "32",
+    "code": "32_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "33",
+    "code": "33_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "33",
+    "code": "33_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "33",
+    "code": "33_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "33",
+    "code": "33_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "33",
+    "code": "33_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "33",
+    "code": "33_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "34",
+    "code": "34_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "34",
+    "code": "34_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "34",
+    "code": "34_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "34",
+    "code": "34_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "34",
+    "code": "34_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "34",
+    "code": "34_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "35",
+    "code": "35_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "35",
+    "code": "35_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "35",
+    "code": "35_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "35",
+    "code": "35_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "35",
+    "code": "35_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "35",
+    "code": "35_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "36",
+    "code": "36_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "36",
+    "code": "36_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "36",
+    "code": "36_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "36",
+    "code": "36_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "36",
+    "code": "36_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "36",
+    "code": "36_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "37",
+    "code": "37_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "37",
+    "code": "37_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "37",
+    "code": "37_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "37",
+    "code": "37_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "37",
+    "code": "37_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "37",
+    "code": "37_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "38",
+    "code": "38_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "38",
+    "code": "38_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "38",
+    "code": "38_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "38",
+    "code": "38_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "38",
+    "code": "38_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "38",
+    "code": "38_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "39",
+    "code": "39_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "39",
+    "code": "39_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "39",
+    "code": "39_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "39",
+    "code": "39_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "39",
+    "code": "39_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "39",
+    "code": "39_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "40",
+    "code": "40_demand_index",
+    "name": "需求景气指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "40",
+    "code": "40_price_spread",
+    "name": "产品-原料价差",
+    "unit": "%",
+    "frequency": "weekly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "40",
+    "code": "40_inventory_index",
+    "name": "库存压力指数",
+    "unit": "index",
+    "frequency": "monthly",
+    "positive_direction": -1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "40",
+    "code": "40_capacity_utilization",
+    "name": "产能利用率",
+    "unit": "%",
+    "frequency": "monthly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "40",
+    "code": "40_capex_growth",
+    "name": "资本开支增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  },
+  {
+    "sector_code": "40",
+    "code": "40_order_growth",
+    "name": "订单或合同负债增速",
+    "unit": "%",
+    "frequency": "quarterly",
+    "positive_direction": 1,
+    "source_hint": "按行业数据插件配置正式来源"
+  }
+]

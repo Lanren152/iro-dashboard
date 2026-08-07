@@ -1,0 +1,322 @@
+[
+  {
+    "code": "01",
+    "name": "农林牧渔",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：农林牧渔",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "02",
+    "name": "煤炭",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：煤炭",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "03",
+    "name": "石油石化",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：石油石化",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "04",
+    "name": "基础化工",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：基础化工",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "05",
+    "name": "钢铁",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：钢铁",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "06",
+    "name": "有色金属",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：有色金属",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "07",
+    "name": "建筑材料",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：建筑材料",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "08",
+    "name": "建筑装饰",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：建筑装饰",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "09",
+    "name": "电力设备",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：电力设备",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "10",
+    "name": "机械设备",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：机械设备",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "11",
+    "name": "国防军工",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：国防军工",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "12",
+    "name": "汽车",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：汽车",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "13",
+    "name": "家用电器",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：家用电器",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "14",
+    "name": "轻工制造",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：轻工制造",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "15",
+    "name": "纺织服饰",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：纺织服饰",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "16",
+    "name": "食品饮料",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：食品饮料",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "17",
+    "name": "医药生物",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：医药生物",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "18",
+    "name": "公用事业",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：公用事业",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "19",
+    "name": "交通运输",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：交通运输",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "20",
+    "name": "房地产",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：房地产",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "21",
+    "name": "商贸零售",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：商贸零售",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "22",
+    "name": "社会服务",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：社会服务",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "23",
+    "name": "银行",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：银行",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "24",
+    "name": "非银金融",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：非银金融",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "25",
+    "name": "电子",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：电子",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "26",
+    "name": "通信",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：通信",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "27",
+    "name": "计算机",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：计算机",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "28",
+    "name": "传媒",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：传媒",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "29",
+    "name": "环保",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：环保",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "30",
+    "name": "美容护理",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：美容护理",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "31",
+    "name": "综合",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：综合",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "32",
+    "name": "基础设施REITs",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：基础设施REITs",
+    "taxonomy_type": "primary"
+  },
+  {
+    "code": "33",
+    "name": "互联网平台",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：互联网平台",
+    "taxonomy_type": "theme"
+  },
+  {
+    "code": "34",
+    "name": "新材料",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：新材料",
+    "taxonomy_type": "theme"
+  },
+  {
+    "code": "35",
+    "name": "机器人与自动化",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：机器人与自动化",
+    "taxonomy_type": "theme"
+  },
+  {
+    "code": "36",
+    "name": "低空经济与航空服务",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：低空经济与航空服务",
+    "taxonomy_type": "theme"
+  },
+  {
+    "code": "37",
+    "name": "算力与数据中心",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：算力与数据中心",
+    "taxonomy_type": "theme"
+  },
+  {
+    "code": "38",
+    "name": "储能与电网",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：储能与电网",
+    "taxonomy_type": "theme"
+  },
+  {
+    "code": "39",
+    "name": "创新药与生命科学",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：创新药与生命科学",
+    "taxonomy_type": "theme"
+  },
+  {
+    "code": "40",
+    "name": "消费服务与本地生活",
+    "level": 1,
+    "parent_code": null,
+    "description": "全市场一级行业：消费服务与本地生活",
+    "taxonomy_type": "theme"
+  }
+]
