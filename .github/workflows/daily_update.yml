@@ -1,0 +1,58 @@
+name: daily-update
+
+on:
+  schedule:
+    # 交易日收盘后更新。UTC 12:40 = 北京时间 20:40。
+    # 用 1-5 覆盖周一到周五；假期可能空跑（无新预告=看板保持上期）。
+    - cron: '40 12 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --quiet -r backend/requirements.txt
+
+      - name: Init taxonomy
+        working-directory: backend
+        run: PYTHONPATH=. python -m app.cli init-taxonomy
+
+      - name: Sync forecast signals (full market)
+        working-directory: backend
+        run: PYTHONPATH=. python -m app.cli sync-akshare --skip-deep-dive
+
+      - name: Sync financials + valuation (full trigger set)
+        working-directory: backend
+        run: PYTHONPATH=. python -m app.cli sync-valuation --max-tickers 2000
+
+      - name: Run research cycle
+        working-directory: backend
+        run: PYTHONPATH=. python -m app.cli run-cycle
+
+      - name: Export dashboard
+        working-directory: backend
+        run: PYTHONPATH=. python -m app.export_dashboard -o dashboard/index.html
+
+      - name: Commit and push dashboard
+        run: |
+          if git diff --quiet dashboard/index.html; then
+            echo "看板无变化，跳过提交"
+          else
+            git config user.name "IRO Bot"
+            git config user.email "iro-bot@users.noreply.github.com"
+            git add dashboard/index.html
+            git commit -m "daily update $(date -u +%F)"
+            git push origin main
+            echo "看板已更新并推送"
+          fi
