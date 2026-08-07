@@ -3,96 +3,369 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>投资研究看板 · 2026-08-08 05:22</title>
+<title>投资研究看板 · 2026-08-08 06:56</title>
 <style>
-:root{--bg:#f3f1eb;--paper:#fbfaf6;--ink:#1c211c;--muted:#71766d;--line:#dedbd2;--accent:#294b38;--soft:#e6ebe4;--warn:#8a5d2e}
-*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Noto Sans SC","PingFang SC",system-ui,sans-serif}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(#847e70 .5px,transparent .5px);background-size:8px 8px}
-main{width:min(1440px,calc(100% - 48px));margin:0 auto;padding:42px 0 60px;position:relative}
-header{display:flex;justify-content:space-between;gap:40px;align-items:flex-end;border-bottom:1px solid var(--line);padding-bottom:30px}
-h1{font-size:clamp(30px,4vw,52px);letter-spacing:-.055em;line-height:1.05;max-width:850px;margin:9px 0 18px;font-weight:620}
-header p{max-width:800px;color:var(--muted);line-height:1.75;margin:0}
-.eyebrow{font-size:12px;letter-spacing:.2em;color:var(--accent);font-weight:700}
-.meta-line{font:12px ui-monospace;color:#9a9b94}
-.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:24px 0}
-.stat{background:rgba(251,250,246,.82);border:1px solid var(--line);border-radius:16px;padding:18px}
-.stat strong{font-size:25px;display:block;letter-spacing:-.04em}
+:root{
+  --bg:#0b0f14; --panel:#121a22; --panel2:#0e141b; --line:#1f2a35;
+  --ink:#e8eef4; --muted:#8fa0b0; --dim:#5c6b7a;
+  --up:#ff5a5f; --up-bg:rgba(255,90,95,.12);  /* A股红涨 */
+  --down:#2dd4a7; --down-bg:rgba(45,212,167,.12); /* A股绿跌 */
+  --accent:#4da3ff; --accent-bg:rgba(77,163,255,.12);  /* 信任蓝 */
+  --warn:#f5a623; --warn-bg:rgba(245,166,35,.12);
+  --good:#2dd4a7; --watch:#4da3ff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Noto Sans SC","PingFang SC",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+main{width:min(760px,calc(100% - 28px));margin:0 auto;padding:28px 0 56px}
+header{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:18px}
+.eyebrow{font-size:11px;letter-spacing:.22em;color:var(--accent);font-weight:700;text-transform:uppercase}
+h1{font-size:clamp(26px,5vw,40px);letter-spacing:-.045em;line-height:1.08;margin:10px 0 10px;font-weight:700}
+header p{color:var(--muted);line-height:1.7;margin:0;font-size:14px}
+.meta-line{font:11px ui-monospace;color:var(--dim);margin-top:10px}
+
+/* 顶部数字条 */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 22px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.stat strong{font-size:24px;display:block;letter-spacing:-.03em}
 .stat span{color:var(--muted);font-size:12px}
-.grid{display:grid;grid-template-columns:1.45fr .75fr;gap:16px}
-.panel{background:rgba(251,250,246,.88);border:1px solid var(--line);border-radius:19px;padding:22px}
-.wide{grid-row:span 2}
-.panel-head{display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:17px;border-bottom:1px solid var(--line)}
-.panel-head span{font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
-.panel-head h2{font-size:22px;margin:4px 0 0;letter-spacing:-.035em}
-.panel-head small{color:var(--muted)}
-.opp{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line);align-items:start}
-.opp:last-child{border-bottom:0}
-.score-box{text-align:center;background:var(--soft);border-radius:14px;padding:14px 6px}
-.score-box strong{display:block;font-size:30px;letter-spacing:-.05em;color:var(--accent)}
-.score-box span{font-size:10px;color:var(--muted)}
-.opp h3{margin:0 0 8px;font-size:18px;letter-spacing:-.02em}
-.opp p{margin:0 0 12px;color:var(--muted);line-height:1.6;font-size:13px}
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-.tag{font-size:11px;padding:4px 9px;border-radius:99px;background:#eceae3;color:#5d625a}
-.tag.g{background:#dfe9e0;color:#294b38}.tag.y{background:#eee4d5;color:#7f592b}.tag.r{background:#f0ded9;color:#8a352f}
-.kv{display:grid;grid-template-columns:auto 1fr;gap:7px 14px;font-size:13px}
-.kv dt{color:var(--muted)}.kv dd{margin:0;color:var(--ink)}
-.falsify{background:#f4eee4;border-radius:12px;padding:13px 15px;font-size:12px;color:#7f592b;line-height:1.55}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th{text-align:left;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em;padding:9px 8px;border-bottom:1px solid var(--line)}
-td{padding:10px 8px;border-bottom:1px solid var(--line)}
-tr:last-child td{border-bottom:0}
-td.num{font:13px ui-monospace;text-align:right}
-.pos{color:#2f6f3f}.neg{color:#a03c32}
-.bar{height:6px;border-radius:3px;background:var(--soft);overflow:hidden;margin-top:5px}
-.bar i{display:block;height:100%;background:var(--accent);border-radius:3px}
-.chart-wrap{position:relative;height:260px}
-.sector-cloud{display:flex;flex-wrap:wrap;gap:8px;padding-top:14px}
-.sector-cloud span{padding:7px 10px;border:1px solid var(--line);border-radius:8px;font-size:12px;background:#f5f3ed}
-.empty{padding:32px 8px;color:var(--muted);font-size:13px}
-footer{border-top:1px solid var(--line);margin-top:34px;padding-top:20px;color:var(--muted);font-size:12px;line-height:1.6}
-@media(max-width:1000px){main{width:min(100% - 24px,760px);padding-top:24px}.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.wide{grid-row:auto}}
-@media(max-width:520px){.stats{grid-template-columns:1fr 1fr}.stat strong{font-size:20px}.opp{grid-template-columns:1fr}.score-box{text-align:left;display:flex;gap:10px;align-items:baseline}.score-box strong{font-size:24px}}
+
+/* 决策清单标题 */
+.section-title{margin:26px 0 14px}
+.section-title h2{font-size:18px;margin:0;letter-spacing:-.02em}
+.section-title p{color:var(--muted);font-size:12px;margin:5px 0 0;line-height:1.6}
+
+/* 候选卡片流 */
+.cards{display:flex;flex-direction:column;gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 18px 14px;cursor:pointer;transition:border-color .15s}
+.card:hover,.card.open{border-color:var(--accent)}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.card-name{min-width:0}
+.card-name h3{margin:0;font-size:17px;letter-spacing:-.02em}
+.card-name .code{font:11px ui-monospace;color:var(--dim);margin-top:3px}
+.card-highlight{text-align:right;flex-shrink:0}
+.card-highlight .growth{font-size:22px;font-weight:700;color:var(--up);letter-spacing:-.03em}
+.card-highlight .tagline{font-size:11px;color:var(--muted);margin-top:2px}
+.card-story{margin:12px 0 0;color:var(--ink);font-size:14px;line-height:1.65;background:var(--panel2);border-radius:10px;padding:11px 13px}
+.card-story .why{color:var(--muted);font-size:12px;margin-top:6px;line-height:1.55}
+.card-metrics{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.metric{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:7px 11px;font-size:12px}
+.metric b{display:block;font-size:14px;margin-top:2px}
+.metric span{color:var(--muted);font-size:10px;letter-spacing:.04em}
+.metric .up{color:var(--up)}.metric .down{color:var(--down)}.metric .flat{color:var(--muted)}
+.card-verdict{margin-top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px}
+.pill.good{background:var(--good);color:#06261d}
+.pill.watch{background:var(--accent);color:#04213f}
+.pill.warn{background:var(--warn);color:#2a1a04}
+.card-risk{font-size:12px;color:var(--warn);margin-top:8px;line-height:1.5}
+
+/* 卡片展开详情 */
+.detail{display:none;margin-top:14px;border-top:1px solid var(--line);padding-top:14px}
+.card.open .detail{display:block}
+.detail h4{font-size:12px;color:var(--muted);margin:12px 0 8px;text-transform:uppercase;letter-spacing:.08em}
+.detail table{width:100%;border-collapse:collapse;font-size:12px}
+.detail th{text-align:left;color:var(--dim);font-size:10px;text-transform:uppercase;letter-spacing:.06em;padding:6px 6px;border-bottom:1px solid var(--line)}
+.detail td{padding:7px 6px;border-bottom:1px solid var(--line)}
+.detail tr:last-child td{border-bottom:0}
+.detail td.num{font:12px ui-monospace;text-align:right}
+
+/* 副区块（预告分布 / 机会） */
+.sub-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.sub-panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.sub-panel h3{font-size:14px;margin:0 0 10px;letter-spacing:-.01em}
+.opp-item{padding:10px 0;border-bottom:1px solid var(--line)}
+.opp-item:last-child{border-bottom:0}
+.opp-item h4{margin:0;font-size:13px}
+.opp-item p{margin:5px 0 0;color:var(--muted);font-size:12px;line-height:1.55}
+.opp-score{font-size:18px;font-weight:700;color:var(--accent)}
+.chart-wrap{position:relative;height:200px}
+.sector-cloud{display:flex;flex-wrap:wrap;gap:6px}
+.sector-cloud span{padding:5px 9px;border:1px solid var(--line);border-radius:7px;font-size:11px;background:var(--panel2);color:var(--muted)}
+.empty{padding:26px 10px;color:var(--muted);font-size:13px;text-align:center}
+footer{border-top:1px solid var(--line);margin-top:30px;padding-top:18px;color:var(--dim);font-size:11px;line-height:1.7}
+.hint{text-align:center;color:var(--dim);font-size:11px;margin-top:10px}
+@media(max-width:560px){.stats{grid-template-columns:repeat(3,1fr)}.sub-grid{grid-template-columns:1fr}.card-highlight .growth{font-size:19px}}
 </style>
 </head>
 <body>
 <main>
   <header>
     <div>
-      <div class="eyebrow">INVESTMENT RESEARCH OS · 静态快照</div>
-      <h1>全市场机会发现与证据研究</h1>
-      <p>市场驱动与公司驱动双入口，自动完成证据验证、利润传导、公司映射、三情景盈利模型、市场隐含预期、反方审查和持续监控。此页为静态导出，数据内嵌，无需后端。</p>
-      <div class="meta-line">生成时间：2026-08-08 05:22</div>
+      <div class="eyebrow">投资研究 · 候选雷达</div>
+      <h1>今天该关注谁</h1>
+      <p>从全市场找利润在变、现金流真实、市场还没充分定价的票。点卡片看财务明细。</p>
+      <div class="meta-line">数据截止 2026-08-08 06:56 · 数据源：业绩预告 + baostock 财务/估值</div>
     </div>
   </header>
 
   <section class="stats">
-    <div class="stat"><strong>40</strong><span>一级行业</span></div>
-    <div class="stat"><strong>5539</strong><span>覆盖公司</span></div>
-    <div class="stat"><strong>678</strong><span>财务快照</span></div>
-    <div class="stat"><strong>58</strong><span>指标观测</span></div>
-    <div class="stat"><strong>3760</strong><span>预告/公告</span></div>
     <div class="stat"><strong>0</strong><span>研究机会</span></div>
+    <div class="stat"><strong>8</strong><span>候选中</span></div>
+    <div class="stat"><strong>5539</strong><span>覆盖公司</span></div>
   </section>
 
   
-<section class="panel" style="margin-bottom:16px">
-  <div class="panel-head"><span>Candidate Watchlist</span><h2>候选清单 · 利润暴增 × 现金流真实 × 估值未充分定价</h2>
-    <small>按性价比排序（利润增速 / PE）</small></div>
-  <table>
-    <thead><tr><th>代码</th><th>公司</th><th>利润增速</th><th>经营现金流</th><th>PE</th><th>PB</th><th>市值</th><th>性价比</th><th>为什么</th></tr></thead>
-    <tbody><tr><td>002582</td><td>好想你</td><td class='num'><span class="pos">+2701.0%</span></td><td class='num'>6764万</td><td class='num'>2.3</td><td class='num'>0.88</td><td class='num'>45.3亿</td><td class='num'><b>1166</b></td><td>利润增速2701%+现金流为正+PE 2.3，性价比 1167（增速/PE）</td></tr><tr><td>002458</td><td>益生股份</td><td class='num'><span class="pos">+6949.8%</span></td><td class='num'>4.6亿</td><td class='num'>27.8</td><td class='num'>2.80</td><td class='num'>100.5亿</td><td class='num'><b>250</b></td><td>利润增速6950%+现金流为正+PE 27.8，性价比 250（增速/PE）</td></tr><tr><td>300475</td><td>香农芯创</td><td class='num'><span class="pos">+9661.6%</span></td><td class='num'>26.4亿</td><td class='num'>40.2</td><td class='num'>15.33</td><td class='num'>726.1亿</td><td class='num'><b>241</b></td><td>利润增速9662%+现金流为正+PE 40.2，性价比 241（增速/PE）</td></tr><tr><td>603329</td><td>上海雅仕</td><td class='num'><span class="pos">+376.2%</span></td><td class='num'>3295万</td><td class='num'>36.2</td><td class='num'>1.68</td><td class='num'>15.8亿</td><td class='num'><b>10</b></td><td>利润增速376%+现金流为正+PE 36.2，性价比 10（增速/PE）</td></tr><tr><td>002466</td><td>天齐锂业</td><td class='num'><span class="pos">+263.1%</span></td><td class='num'>2.6亿</td><td class='num'>36.7</td><td class='num'>1.77</td><td class='num'>785.7亿</td><td class='num'><b>7</b></td><td>利润增速263%+现金流为正+PE 36.7，性价比 7（增速/PE）</td></tr><tr><td>002738</td><td>中矿资源</td><td class='num'><span class="pos">+309.8%</span></td><td class='num'>2169万</td><td class='num'>46.7</td><td class='num'>3.04</td><td class='num'>383.4亿</td><td class='num'><b>7</b></td><td>利润增速310%+现金流为正+PE 46.7，性价比 7（增速/PE）</td></tr><tr><td>603268</td><td>松发股份</td><td class='num'><span class="pos">+330.3%</span></td><td class='num'>40.0亿</td><td class='num'>53.4</td><td class='num'>17.69</td><td class='num'>227.4亿</td><td class='num'><b>6</b></td><td>利润增速330%+现金流为正+PE 53.4，性价比 6（增速/PE）</td></tr><tr><td>002379</td><td>宏桥控股</td><td class='num'><span class="pos">+31.0%</span></td><td class='num'>92.4亿</td><td class='num'>13.1</td><td class='num'>4.93</td><td class='num'>224.5亿</td><td class='num'><b>2</b></td><td>利润增速31%+现金流为正+PE 13.1，性价比 2（增速/PE）</td></tr></tbody>
-  </table>
+<section class="section-title">
+  <h2>候选清单</h2>
+  <p>利润在变 × 现金流真实 × 估值未充分定价 · 按性价比（利润增速/PE）排序 · 点击卡片看财务明细</p>
 </section>
+<div class="cards">
+<article class="card" onclick="this.classList.toggle('open')" tabindex="0" role="button"
+         onkeydown="if(event.key==='Enter')this.classList.toggle('open')" aria-expanded="false">
+  <div class="card-top">
+    <div class="card-name">
+      <h3>好想你</h3>
+      <div class="code">002582</div>
+    </div>
+    <div class="card-highlight">
+      <div class="growth">利润暴增27倍</div>
+      <div class="tagline"><span class="pos">+2701.0%</span></div>
+    </div>
+  </div>
+  <div class="card-story">
+    <div class="why"></div>
+    <div style="margin-top:8px">报告期内,归属于上市公司股东的净利润同比大幅增加,主要系参股公司湖南鸣鸣很忙商业连锁股份有限公司(以下简称“鸣鸣很忙”)公允价值增加,非经常性损益增加约8亿元。公司营业收入增长,毛利率提升,员工持股计划计提费用、宣传推广费用增加,以及因鸣鸣…</div>
+  </div>
+  <div class="card-metrics">
+    <div class="metric"><span>回本年限</span><b class="flat">约2年回本</b></div>
+    <div class="metric"><span>现金流</span><b class="up">经营现金流为正</b></div>
+    <div class="metric"><span>市值</span><b class="flat">45.3亿</b></div>
+  </div>
+  <div class="card-verdict">
+    <span class="pill good">值得深挖</span>
+    <span style="color:var(--dim);font-size:11px">点击展开财务明细</span>
+  </div>
+  
+  <div class="detail">
+    <h4>财务明细（最近一期）</h4>
+    <table><tbody><tr><td>净利润</td><td class='num'>11.1亿</td></tr><tr><td>利润增速</td><td class='num'><span class="pos">+2701.0%</span></td></tr><tr><td>收入增速</td><td class='num'><span class="pos">+22.4%</span></td></tr><tr><td>经营现金流</td><td class='num'>6764万</td></tr><tr><td>PE (回本年数)</td><td class='num'>2.3</td></tr><tr><td>PB</td><td class='num'>0.88</td></tr><tr><td>市值</td><td class='num'>45.3亿</td></tr></tbody></table>
+  </div>
+</article>
+<article class="card" onclick="this.classList.toggle('open')" tabindex="0" role="button"
+         onkeydown="if(event.key==='Enter')this.classList.toggle('open')" aria-expanded="false">
+  <div class="card-top">
+    <div class="card-name">
+      <h3>益生股份</h3>
+      <div class="code">002458</div>
+    </div>
+    <div class="card-highlight">
+      <div class="growth">利润暴增69倍</div>
+      <div class="tagline"><span class="pos">+6949.8%</span></div>
+    </div>
+  </div>
+  <div class="card-story">
+    <div class="why"></div>
+    <div style="margin-top:8px">报告期内,公司预计实现归属于上市公司股东的净利润为27,000.00万元-30,000.00万元,业绩大幅增长主要系白羽肉鸡行业景气度上行,公司主营的白羽肉鸡业务量价齐升,整体盈利水平实现显著增长所致。从经营层面来看,2025年公司祖代白羽…</div>
+  </div>
+  <div class="card-metrics">
+    <div class="metric"><span>回本年限</span><b class="flat">约28年回本</b></div>
+    <div class="metric"><span>现金流</span><b class="up">经营现金流为正</b></div>
+    <div class="metric"><span>市值</span><b class="flat">100.5亿</b></div>
+  </div>
+  <div class="card-verdict">
+    <span class="pill watch">观察</span>
+    <span style="color:var(--dim);font-size:11px">点击展开财务明细</span>
+  </div>
+  
+  <div class="detail">
+    <h4>财务明细（最近一期）</h4>
+    <table><tbody><tr><td>净利润</td><td class='num'>3.1亿</td></tr><tr><td>利润增速</td><td class='num'><span class="pos">+6949.8%</span></td></tr><tr><td>收入增速</td><td class='num'><span class="pos">+28.4%</span></td></tr><tr><td>经营现金流</td><td class='num'>4.6亿</td></tr><tr><td>PE (回本年数)</td><td class='num'>27.8</td></tr><tr><td>PB</td><td class='num'>2.80</td></tr><tr><td>市值</td><td class='num'>100.5亿</td></tr></tbody></table>
+  </div>
+</article>
+<article class="card" onclick="this.classList.toggle('open')" tabindex="0" role="button"
+         onkeydown="if(event.key==='Enter')this.classList.toggle('open')" aria-expanded="false">
+  <div class="card-top">
+    <div class="card-name">
+      <h3>香农芯创</h3>
+      <div class="code">300475</div>
+    </div>
+    <div class="card-highlight">
+      <div class="growth">利润暴增97倍</div>
+      <div class="tagline"><span class="pos">+9661.6%</span></div>
+    </div>
+  </div>
+  <div class="card-story">
+    <div class="why"></div>
+    <div style="margin-top:8px">2026年上半年,受人工智能相关需求增长影响,互联网数据中心等领域对企业级存储产品的需求持续增加,存储芯片行业保持高景气度,相关产品价格较上年同期稳步上涨。公司电子元器件分销业务销售综合毛利率同比提高,带动公司盈利水平大幅提升。同时,公司自…</div>
+  </div>
+  <div class="card-metrics">
+    <div class="metric"><span>回本年限</span><b class="flat">约40年回本</b></div>
+    <div class="metric"><span>现金流</span><b class="up">经营现金流为正</b></div>
+    <div class="metric"><span>市值</span><b class="flat">726.1亿</b></div>
+  </div>
+  <div class="card-verdict">
+    <span class="pill watch">观察</span>
+    <span style="color:var(--dim);font-size:11px">点击展开财务明细</span>
+  </div>
+  <div class="card-risk">⚠️ PE 40 已偏高——利润暴增可能已被市场部分定价。</div>
+  <div class="detail">
+    <h4>财务明细（最近一期）</h4>
+    <table><tbody><tr><td>净利润</td><td class='num'>13.4亿</td></tr><tr><td>利润增速</td><td class='num'><span class="pos">+9661.6%</span></td></tr><tr><td>收入增速</td><td class='num'><span class="pos">+200.6%</span></td></tr><tr><td>经营现金流</td><td class='num'>26.4亿</td></tr><tr><td>PE (回本年数)</td><td class='num'>40.2</td></tr><tr><td>PB</td><td class='num'>15.33</td></tr><tr><td>市值</td><td class='num'>726.1亿</td></tr></tbody></table>
+  </div>
+</article>
+<article class="card" onclick="this.classList.toggle('open')" tabindex="0" role="button"
+         onkeydown="if(event.key==='Enter')this.classList.toggle('open')" aria-expanded="false">
+  <div class="card-top">
+    <div class="card-name">
+      <h3>上海雅仕</h3>
+      <div class="code">603329</div>
+    </div>
+    <div class="card-highlight">
+      <div class="growth">利润暴增4倍</div>
+      <div class="tagline"><span class="pos">+376.2%</span></div>
+    </div>
+  </div>
+  <div class="card-story">
+    <div class="why"></div>
+    <div style="margin-top:8px">2026年上半年,公司持续聚焦核心主业,强化业务风险管控。供应链执行贸易业务方面,核心品种硫磺市场均价较上年同期显著上行,叠加销量增长,共同推动营业利润实现有效提升。同时,公司深化全面预算管理,健全费用过程监控与动态调整机制,推进成本精细化…</div>
+  </div>
+  <div class="card-metrics">
+    <div class="metric"><span>回本年限</span><b class="flat">约36年回本</b></div>
+    <div class="metric"><span>现金流</span><b class="up">经营现金流为正</b></div>
+    <div class="metric"><span>市值</span><b class="flat">15.8亿</b></div>
+  </div>
+  <div class="card-verdict">
+    <span class="pill watch">观察</span>
+    <span style="color:var(--dim);font-size:11px">点击展开财务明细</span>
+  </div>
+  
+  <div class="detail">
+    <h4>财务明细（最近一期）</h4>
+    <table><tbody><tr><td>净利润</td><td class='num'>4059万</td></tr><tr><td>利润增速</td><td class='num'><span class="pos">+376.2%</span></td></tr><tr><td>收入增速</td><td class='num'><span class="pos">+4.8%</span></td></tr><tr><td>经营现金流</td><td class='num'>3295万</td></tr><tr><td>PE (回本年数)</td><td class='num'>36.2</td></tr><tr><td>PB</td><td class='num'>1.68</td></tr><tr><td>市值</td><td class='num'>15.8亿</td></tr></tbody></table>
+  </div>
+</article>
+<article class="card" onclick="this.classList.toggle('open')" tabindex="0" role="button"
+         onkeydown="if(event.key==='Enter')this.classList.toggle('open')" aria-expanded="false">
+  <div class="card-top">
+    <div class="card-name">
+      <h3>天齐锂业</h3>
+      <div class="code">002466</div>
+    </div>
+    <div class="card-highlight">
+      <div class="growth">利润暴增3倍</div>
+      <div class="tagline"><span class="pos">+263.1%</span></div>
+    </div>
+  </div>
+  <div class="card-story">
+    <div class="why"></div>
+    <div style="margin-top:8px">1、天齐锂业股份有限公司(以下简称“公司”)预计本报告期营业收入较上年同期大幅上升。受益于新能源产业发展与下游需求增长等多重利好因素驱动,本报告期公司主要锂产品的销售均价较上年同期均明显增长。2、截至本业绩预告公告日,公司重要的联营公司So…</div>
+  </div>
+  <div class="card-metrics">
+    <div class="metric"><span>回本年限</span><b class="flat">约37年回本</b></div>
+    <div class="metric"><span>现金流</span><b class="up">经营现金流为正</b></div>
+    <div class="metric"><span>市值</span><b class="flat">785.7亿</b></div>
+  </div>
+  <div class="card-verdict">
+    <span class="pill watch">观察</span>
+    <span style="color:var(--dim);font-size:11px">点击展开财务明细</span>
+  </div>
+  
+  <div class="detail">
+    <h4>财务明细（最近一期）</h4>
+    <table><tbody><tr><td>净利润</td><td class='num'>28.4亿</td></tr><tr><td>利润增速</td><td class='num'><span class="pos">+263.1%</span></td></tr><tr><td>收入增速</td><td class='num'><span class="pos">+98.4%</span></td></tr><tr><td>经营现金流</td><td class='num'>2.6亿</td></tr><tr><td>PE (回本年数)</td><td class='num'>36.7</td></tr><tr><td>PB</td><td class='num'>1.77</td></tr><tr><td>市值</td><td class='num'>785.7亿</td></tr></tbody></table>
+  </div>
+</article>
+<article class="card" onclick="this.classList.toggle('open')" tabindex="0" role="button"
+         onkeydown="if(event.key==='Enter')this.classList.toggle('open')" aria-expanded="false">
+  <div class="card-top">
+    <div class="card-name">
+      <h3>中矿资源</h3>
+      <div class="code">002738</div>
+    </div>
+    <div class="card-highlight">
+      <div class="growth">利润暴增3倍</div>
+      <div class="tagline"><span class="pos">+309.8%</span></div>
+    </div>
+  </div>
+  <div class="card-story">
+    <div class="why"></div>
+    <div style="margin-top:8px">2026年上半年,公司预计归属于上市公司股东的净利润较上年同期实现较大幅度增长,主要变动原因如下:1.受益于下游储能及动力电池行业的发展,锂盐产品价格同比上行,公司锂电新能源原料开发与利用板块经营效益改善,利润实现同比增长,公司整体盈利水平…</div>
+  </div>
+  <div class="card-metrics">
+    <div class="metric"><span>回本年限</span><b class="flat">约47年回本</b></div>
+    <div class="metric"><span>现金流</span><b class="up">经营现金流为正</b></div>
+    <div class="metric"><span>市值</span><b class="flat">383.4亿</b></div>
+  </div>
+  <div class="card-verdict">
+    <span class="pill watch">观察</span>
+    <span style="color:var(--dim);font-size:11px">点击展开财务明细</span>
+  </div>
+  <div class="card-risk">⚠️ PE 47 已偏高——利润暴增可能已被市场部分定价。</div>
+  <div class="detail">
+    <h4>财务明细（最近一期）</h4>
+    <table><tbody><tr><td>净利润</td><td class='num'>5.5亿</td></tr><tr><td>利润增速</td><td class='num'><span class="pos">+309.8%</span></td></tr><tr><td>收入增速</td><td class='num'><span class="neg">-10.4%</span></td></tr><tr><td>经营现金流</td><td class='num'>2169万</td></tr><tr><td>PE (回本年数)</td><td class='num'>46.7</td></tr><tr><td>PB</td><td class='num'>3.04</td></tr><tr><td>市值</td><td class='num'>383.4亿</td></tr></tbody></table>
+  </div>
+</article>
+<article class="card" onclick="this.classList.toggle('open')" tabindex="0" role="button"
+         onkeydown="if(event.key==='Enter')this.classList.toggle('open')" aria-expanded="false">
+  <div class="card-top">
+    <div class="card-name">
+      <h3>松发股份</h3>
+      <div class="code">603268</div>
+    </div>
+    <div class="card-highlight">
+      <div class="growth">利润暴增3倍</div>
+      <div class="tagline"><span class="pos">+330.3%</span></div>
+    </div>
+  </div>
+  <div class="card-story">
+    <div class="why"></div>
+    <div style="margin-top:8px">2026上半年,全球造船市场延续高景气周期,环保法规趋严和老龄船替换推动新造船市场量价齐升,公司新签订单规模及船型多元化程度持续攀升,高附加值油轮及集装箱船占比稳步提高。报告期内,公司依托规模大、区位优、运营效率高及产业配套全等综合优势,叠…</div>
+  </div>
+  <div class="card-metrics">
+    <div class="metric"><span>回本年限</span><b class="flat">约53年回本</b></div>
+    <div class="metric"><span>现金流</span><b class="up">经营现金流为正</b></div>
+    <div class="metric"><span>市值</span><b class="flat">227.4亿</b></div>
+  </div>
+  <div class="card-verdict">
+    <span class="pill watch">观察</span>
+    <span style="color:var(--dim);font-size:11px">点击展开财务明细</span>
+  </div>
+  <div class="card-risk">⚠️ PE 53 已偏高——利润暴增可能已被市场部分定价。</div>
+  <div class="detail">
+    <h4>财务明细（最近一期）</h4>
+    <table><tbody><tr><td>净利润</td><td class='num'>10.9亿</td></tr><tr><td>利润增速</td><td class='num'><span class="pos">+330.3%</span></td></tr><tr><td>收入增速</td><td class='num'><span class="pos">+15368.6%</span></td></tr><tr><td>经营现金流</td><td class='num'>40.0亿</td></tr><tr><td>PE (回本年数)</td><td class='num'>53.4</td></tr><tr><td>PB</td><td class='num'>17.69</td></tr><tr><td>市值</td><td class='num'>227.4亿</td></tr></tbody></table>
+  </div>
+</article>
+<article class="card" onclick="this.classList.toggle('open')" tabindex="0" role="button"
+         onkeydown="if(event.key==='Enter')this.classList.toggle('open')" aria-expanded="false">
+  <div class="card-top">
+    <div class="card-name">
+      <h3>宏桥控股</h3>
+      <div class="code">002379</div>
+    </div>
+    <div class="card-highlight">
+      <div class="growth">利润增长31%</div>
+      <div class="tagline"><span class="pos">+31.0%</span></div>
+    </div>
+  </div>
+  <div class="card-story">
+    <div class="why"></div>
+    <div style="margin-top:8px">公司业绩增长的主要原因为:2026年上半年,电解铝市场销售价格同比大幅上涨,相关业务毛利实现显著提升;同时,公司本期借款规模较上年同期明显缩减,财务利息支出大幅减少,进一步增厚利润。扣除非经常性损益后的净利润大幅变动的主要原因为:2025年…</div>
+  </div>
+  <div class="card-metrics">
+    <div class="metric"><span>回本年限</span><b class="flat">约13年回本</b></div>
+    <div class="metric"><span>现金流</span><b class="up">经营现金流为正</b></div>
+    <div class="metric"><span>市值</span><b class="flat">224.5亿</b></div>
+  </div>
+  <div class="card-verdict">
+    <span class="pill warn">有隐患</span>
+    <span style="color:var(--dim);font-size:11px">点击展开财务明细</span>
+  </div>
+  
+  <div class="detail">
+    <h4>财务明细（最近一期）</h4>
+    <table><tbody><tr><td>净利润</td><td class='num'>67.6亿</td></tr><tr><td>利润增速</td><td class='num'><span class="pos">+31.0%</span></td></tr><tr><td>收入增速</td><td class='num'><span class="pos">+5211.9%</span></td></tr><tr><td>经营现金流</td><td class='num'>92.4亿</td></tr><tr><td>PE (回本年数)</td><td class='num'>13.1</td></tr><tr><td>PB</td><td class='num'>4.93</td></tr><tr><td>市值</td><td class='num'>224.5亿</td></tr></tbody></table>
+  </div>
+</article></div>
 
-  <section class="grid">
-    <div class="panel wide">
-      <div class="panel-head"><span>Opportunities</span><h2>研究机会</h2></div>
+  <section class="sub-grid">
+    <div class="sub-panel">
+      <h3>研究机会</h3>
       <div class="empty">当前无研究机会。运行 run-cycle 后此处会展示发现的候选方向。</div>
     </div>
-
-    <div class="panel">
-      <div class="panel-head"><span>Forecasts</span><h2>业绩预告分布</h2></div>
+    <div class="sub-panel">
+      <h3>业绩预告分布（全市场）</h3>
       
 <div class="chart-wrap"><canvas id="fc"></canvas></div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
@@ -103,31 +376,20 @@ document.addEventListener('DOMContentLoaded', () => {
   new Chart(el, { type: 'bar', data: {
     labels: ["预增", "首亏", "增亏", "减亏", "扭亏", "预减", "略增", "续亏", "略减", "续盈"],
     datasets: [{ label: '预告公司数', data: [1083, 522, 499, 449, 402, 387, 180, 144, 63, 25],
-      backgroundColor: '#294b38', borderRadius: 6, barPercentage: .7 }]
+      backgroundColor: '#4da3ff', borderRadius: 5, barPercentage: .7 }]
   }, options: { responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: false }, title: { display: true, text: '业绩预告类型分布（全市场）', font: { size: 13 } } },
-    scales: { y: { beginAtZero: true } } } });
+    plugins: { legend: { display: false }, title: { display: true, text: '业绩预告类型分布（全市场）', color: '#8fa0b0', font: { size: 12 } } },
+    scales: { y: { beginAtZero: true, ticks: { color: '#5c6b7a' }, grid: { color: '#1f2a35' } },
+              x: { ticks: { color: '#8fa0b0' }, grid: { display: false } } } } });
 });
 </script>
     </div>
-
-    <div class="panel">
-      <div class="panel-head"><span>Sectors</span><h2>行业覆盖</h2></div>
-      <div class="sector-cloud"><span>综合 <b style='font:10px ui-monospace;color:#989b94'>5539</b></span></div>
-    </div>
   </section>
 
-  <section class="panel" style="margin-top:16px">
-    <div class="panel-head"><span>Deep-dive</span><h2>深挖公司财务 + 估值（最近一期）</h2>
-      <small>触发利润变化的公司，按预告幅度降序深挖；PE/PB 来自 baostock</small></div>
-    <table>
-      <thead><tr><th>代码</th><th>公司</th><th>净利润</th><th>利润增速</th><th>收入增速</th><th>经营现金流</th><th>PE</th><th>PB</th></tr></thead>
-      <tbody><tr><td>002458</td><td>益生股份</td><td class='num'>3.1亿</td><td class='num'><span class="pos">+6949.8%</span></td><td class='num'><span class="pos">+28.4%</span></td><td class='num'>4.6亿</td><td class='num'>27.8</td><td class='num'>2.80</td></tr><tr><td>600641</td><td>先导基电</td><td class='num'>1.5亿</td><td class='num'><span class="pos">+922.8%</span></td><td class='num'><span class="pos">+64.1%</span></td><td class='num'>-11.5亿</td><td class='num'>693.2</td><td class='num'>3.52</td></tr><tr><td>603727</td><td>博迈科</td><td class='num'>-7044万</td><td class='num'><span class="neg">-668.7%</span></td><td class='num'><span class="neg">-26.7%</span></td><td class='num'>—</td><td class='num'>-240.6</td><td class='num'>1.67</td></tr><tr><td>688825</td><td>长鑫科技</td><td class='num'>330.1亿</td><td class='num'><span class="pos">+1268.4%</span></td><td class='num'><span class="pos">+719.1%</span></td><td class='num'>425.7亿</td><td class='num'>124.5</td><td class='num'>42.95</td></tr><tr><td>002379</td><td>宏桥控股</td><td class='num'>67.6亿</td><td class='num'><span class="pos">+31.0%</span></td><td class='num'><span class="pos">+5211.9%</span></td><td class='num'>92.4亿</td><td class='num'>13.1</td><td class='num'>4.93</td></tr><tr><td>301308</td><td>江波龙</td><td class='num'>39.8亿</td><td class='num'><span class="pos">+2884.3%</span></td><td class='num'><span class="pos">+132.8%</span></td><td class='num'>-28.7亿</td><td class='num'>30.1</td><td class='num'>13.42</td></tr><tr><td>001309</td><td>德明利</td><td class='num'>33.5亿</td><td class='num'><span class="pos">+4942.4%</span></td><td class='num'><span class="pos">+502.1%</span></td><td class='num'>-2.4亿</td><td class='num'>22.3</td><td class='num'>13.84</td></tr><tr><td>688525</td><td>佰维存储</td><td class='num'>28.8亿</td><td class='num'><span class="pos">+1499.9%</span></td><td class='num'><span class="pos">+341.5%</span></td><td class='num'>-27.1亿</td><td class='num'>29.2</td><td class='num'>13.57</td></tr><tr><td>002466</td><td>天齐锂业</td><td class='num'>28.4亿</td><td class='num'><span class="pos">+263.1%</span></td><td class='num'><span class="pos">+98.4%</span></td><td class='num'>2.6亿</td><td class='num'>36.7</td><td class='num'>1.77</td></tr><tr><td>000703</td><td>恒逸石化</td><td class='num'>28.2亿</td><td class='num'><span class="pos">+3531.8%</span></td><td class='num'><span class="pos">+10.2%</span></td><td class='num'>-25.7亿</td><td class='num'>30.7</td><td class='num'>2.56</td></tr><tr><td>300475</td><td>香农芯创</td><td class='num'>13.4亿</td><td class='num'><span class="pos">+9661.6%</span></td><td class='num'><span class="pos">+200.6%</span></td><td class='num'>26.4亿</td><td class='num'>40.2</td><td class='num'>15.33</td></tr><tr><td>002582</td><td>好想你</td><td class='num'>11.1亿</td><td class='num'><span class="pos">+2701.0%</span></td><td class='num'><span class="pos">+22.4%</span></td><td class='num'>6764万</td><td class='num'>2.3</td><td class='num'>0.88</td></tr><tr><td>300390</td><td>天华新能</td><td class='num'>11.1亿</td><td class='num'><span class="pos">+1206.4%</span></td><td class='num'><span class="pos">+89.6%</span></td><td class='num'>-1.8亿</td><td class='num'>38.5</td><td class='num'>4.09</td></tr><tr><td>603268</td><td>松发股份</td><td class='num'>10.9亿</td><td class='num'><span class="pos">+330.3%</span></td><td class='num'><span class="pos">+15368.6%</span></td><td class='num'>40.0亿</td><td class='num'>53.4</td><td class='num'>17.69</td></tr><tr><td>002738</td><td>中矿资源</td><td class='num'>5.5亿</td><td class='num'><span class="pos">+309.8%</span></td><td class='num'><span class="neg">-10.4%</span></td><td class='num'>2169万</td><td class='num'>46.7</td><td class='num'>3.04</td></tr><tr><td>600292</td><td>电投水电</td><td class='num'>4.7亿</td><td class='num'><span class="pos">+56.3%</span></td><td class='num'><span class="pos">+181.6%</span></td><td class='num'>5.2亿</td><td class='num'>76.4</td><td class='num'>3.41</td></tr><tr><td>002407</td><td>多氟多</td><td class='num'>4.3亿</td><td class='num'><span class="pos">+638.6%</span></td><td class='num'><span class="pos">+53.3%</span></td><td class='num'>-6.9亿</td><td class='num'>83.1</td><td class='num'>4.96</td></tr><tr><td>688766</td><td>普冉股份</td><td class='num'>3.7亿</td><td class='num'><span class="pos">+1917.5%</span></td><td class='num'><span class="pos">+256.1%</span></td><td class='num'>2.4亿</td><td class='num'>133.0</td><td class='num'>21.72</td></tr><tr><td>002842</td><td>翔鹭钨业</td><td class='num'>2.5亿</td><td class='num'><span class="pos">+2917.1%</span></td><td class='num'><span class="pos">+138.7%</span></td><td class='num'>-5.8亿</td><td class='num'>32.5</td><td class='num'>8.60</td></tr><tr><td>603127</td><td>昭衍新药</td><td class='num'>2.4亿</td><td class='num'><span class="pos">+479.7%</span></td><td class='num'><span class="pos">+10.0%</span></td><td class='num'>1.3亿</td><td class='num'>77.0</td><td class='num'>4.46</td></tr><tr><td>688308</td><td>欧科亿</td><td class='num'>2.0亿</td><td class='num'><span class="pos">+2954.8%</span></td><td class='num'><span class="pos">+113.5%</span></td><td class='num'>-2.2亿</td><td class='num'>54.3</td><td class='num'>5.75</td></tr><tr><td>603045</td><td>福达合金</td><td class='num'>1.8亿</td><td class='num'><span class="pos">+3626.4%</span></td><td class='num'><span class="pos">+92.7%</span></td><td class='num'>-1.4亿</td><td class='num'>25.9</td><td class='num'>6.09</td></tr><tr><td>002640</td><td>跨境通</td><td class='num'>1.6亿</td><td class='num'><span class="pos">+4124.5%</span></td><td class='num'><span class="pos">+2.9%</span></td><td class='num'>-4.9亿</td><td class='num'>-20.3</td><td class='num'>8.08</td></tr><tr><td>601678</td><td>滨化股份</td><td class='num'>1.5亿</td><td class='num'><span class="pos">+60.7%</span></td><td class='num'><span class="pos">+3.7%</span></td><td class='num'>1.9亿</td><td class='num'>63.7</td><td class='num'>1.50</td></tr><tr><td>002389</td><td>航天彩虹</td><td class='num'>9967万</td><td class='num'><span class="pos">+423.3%</span></td><td class='num'><span class="pos">+18.5%</span></td><td class='num'>-2.3亿</td><td class='num'>114.5</td><td class='num'>2.24</td></tr><tr><td>002747</td><td>埃斯顿</td><td class='num'>9680万</td><td class='num'><span class="pos">+615.1%</span></td><td class='num'><span class="neg">-2.2%</span></td><td class='num'>-1.5亿</td><td class='num'>261.2</td><td class='num'>10.50</td></tr><tr><td>300613</td><td>富瀚微</td><td class='num'>8313万</td><td class='num'><span class="pos">+14750.1%</span></td><td class='num'><span class="pos">+75.5%</span></td><td class='num'>5688万</td><td class='num'>80.3</td><td class='num'>5.93</td></tr><tr><td>688378</td><td>奥来德</td><td class='num'>8009万</td><td class='num'><span class="pos">+214.9%</span></td><td class='num'><span class="pos">+53.5%</span></td><td class='num'>2.2亿</td><td class='num'>86.4</td><td class='num'>5.33</td></tr><tr><td>301638</td><td>南网数字</td><td class='num'>7643万</td><td class='num'><span class="pos">+646.8%</span></td><td class='num'><span class="pos">+77.8%</span></td><td class='num'>-5.4亿</td><td class='num'>108.3</td><td class='num'>6.73</td></tr><tr><td>002185</td><td>华天科技</td><td class='num'>7530万</td><td class='num'><span class="pos">+304.6%</span></td><td class='num'><span class="pos">+34.5%</span></td><td class='num'>4.9亿</td><td class='num'>73.2</td><td class='num'>3.34</td></tr><tr><td>301150</td><td>中一科技</td><td class='num'>7084万</td><td class='num'><span class="pos">+2297.1%</span></td><td class='num'><span class="pos">+43.9%</span></td><td class='num'>-3.9亿</td><td class='num'>95.1</td><td class='num'>3.61</td></tr><tr><td>600037</td><td>歌华有线</td><td class='num'>6758万</td><td class='num'><span class="pos">+96.7%</span></td><td class='num'><span class="pos">+50.1%</span></td><td class='num'>3753万</td><td class='num'>143.4</td><td class='num'>0.76</td></tr><tr><td>600288</td><td>大恒科技</td><td class='num'>6680万</td><td class='num'><span class="pos">+510.3%</span></td><td class='num'><span class="pos">+2.3%</span></td><td class='num'>-5180万</td><td class='num'>29.5</td><td class='num'>2.42</td></tr><tr><td>002491</td><td>通鼎互联</td><td class='num'>6437万</td><td class='num'><span class="neg">-50.8%</span></td><td class='num'><span class="pos">+61.1%</span></td><td class='num'>-1758万</td><td class='num'>-135.4</td><td class='num'>8.42</td></tr><tr><td>300497</td><td>富祥股份</td><td class='num'>5946万</td><td class='num'><span class="pos">+9658.5%</span></td><td class='num'><span class="pos">+53.1%</span></td><td class='num'>1667万</td><td class='num'>2610.2</td><td class='num'>4.57</td></tr><tr><td>002132</td><td>恒星科技</td><td class='num'>5662万</td><td class='num'><span class="pos">+898.6%</span></td><td class='num'><span class="pos">+10.4%</span></td><td class='num'>6167万</td><td class='num'>84.2</td><td class='num'>1.66</td></tr><tr><td>002274</td><td>华昌化工</td><td class='num'>5021万</td><td class='num'><span class="pos">+86.6%</span></td><td class='num'><span class="pos">+3.2%</span></td><td class='num'>2826万</td><td class='num'>-28.9</td><td class='num'>1.01</td></tr><tr><td>002289</td><td>宇顺电子</td><td class='num'>5001万</td><td class='num'><span class="pos">+1589.5%</span></td><td class='num'><span class="pos">+480.4%</span></td><td class='num'>-2.3亿</td><td class='num'>285.0</td><td class='num'>36.01</td></tr><tr><td>002208</td><td>合肥城建</td><td class='num'>4874万</td><td class='num'><span class="neg">-7.3%</span></td><td class='num'><span class="pos">+36.1%</span></td><td class='num'>-3192万</td><td class='num'>-16.6</td><td class='num'>1.55</td></tr><tr><td>002667</td><td>*ST威领</td><td class='num'>4214万</td><td class='num'><span class="pos">+218.9%</span></td><td class='num'><span class="pos">+136.2%</span></td><td class='num'>5631万</td><td class='num'>-10.1</td><td class='num'>-189.98</td></tr><tr><td>603329</td><td>上海雅仕</td><td class='num'>4059万</td><td class='num'><span class="pos">+376.2%</span></td><td class='num'><span class="pos">+4.8%</span></td><td class='num'>3295万</td><td class='num'>36.2</td><td class='num'>1.68</td></tr><tr><td>603196</td><td>璞源材料</td><td class='num'>3305万</td><td class='num'><span class="pos">+353.6%</span></td><td class='num'><span class="pos">+95.8%</span></td><td class='num'>3885万</td><td class='num'>262.1</td><td class='num'>4.49</td></tr><tr><td>600661</td><td>昂立教育</td><td class='num'>2773万</td><td class='num'><span class="pos">+96.2%</span></td><td class='num'><span class="pos">+8.2%</span></td><td class='num'>-7987万</td><td class='num'>27.4</td><td class='num'>10.50</td></tr><tr><td>002115</td><td>三维通信</td><td class='num'>2613万</td><td class='num'><span class="pos">+389.6%</span></td><td class='num'><span class="pos">+110.5%</span></td><td class='num'>-695万</td><td class='num'>1351.5</td><td class='num'>4.65</td></tr><tr><td>603051</td><td>鹿山新材</td><td class='num'>1999万</td><td class='num'><span class="pos">+40.7%</span></td><td class='num'><span class="neg">-4.0%</span></td><td class='num'>-5336万</td><td class='num'>-49.5</td><td class='num'>1.96</td></tr><tr><td>600345</td><td>长江通信</td><td class='num'>1794万</td><td class='num'><span class="pos">+230.2%</span></td><td class='num'><span class="pos">+0.7%</span></td><td class='num'>-1.9亿</td><td class='num'>62.1</td><td class='num'>4.09</td></tr><tr><td>001313</td><td>粤海饲料</td><td class='num'>1214万</td><td class='num'><span class="pos">+147.9%</span></td><td class='num'><span class="pos">+64.2%</span></td><td class='num'>-1.4亿</td><td class='num'>95.0</td><td class='num'>1.99</td></tr><tr><td>600880</td><td>博瑞传播</td><td class='num'>1125万</td><td class='num'><span class="pos">+93.7%</span></td><td class='num'><span class="neg">-34.2%</span></td><td class='num'>-1157万</td><td class='num'>-319.4</td><td class='num'>1.45</td></tr><tr><td>603110</td><td>东方材料</td><td class='num'>1043万</td><td class='num'><span class="pos">+253.4%</span></td><td class='num'><span class="pos">+34.4%</span></td><td class='num'>-430万</td><td class='num'>4623.5</td><td class='num'>7.37</td></tr><tr><td>002564</td><td>天沃科技</td><td class='num'>1019万</td><td class='num'><span class="neg">-73.2%</span></td><td class='num'><span class="neg">-2.2%</span></td><td class='num'>-1.9亿</td><td class='num'>118.7</td><td class='num'>19.90</td></tr><tr><td>002952</td><td>亚世光电</td><td class='num'>1009万</td><td class='num'><span class="pos">+173.6%</span></td><td class='num'><span class="pos">+21.2%</span></td><td class='num'>7274万</td><td class='num'>218.8</td><td class='num'>3.77</td></tr><tr><td>002151</td><td>北斗星通</td><td class='num'>854万</td><td class='num'><span class="pos">+124.5%</span></td><td class='num'><span class="pos">+93.3%</span></td><td class='num'>-2726万</td><td class='num'>-75.3</td><td class='num'>3.33</td></tr><tr><td>002377</td><td>国创高新</td><td class='num'>685万</td><td class='num'><span class="pos">+77.8%</span></td><td class='num'><span class="pos">+374.3%</span></td><td class='num'>-4996万</td><td class='num'>105.3</td><td class='num'>5.99</td></tr><tr><td>300363</td><td>博腾股份</td><td class='num'>631万</td><td class='num'><span class="pos">+124.7%</span></td><td class='num'><span class="pos">+10.6%</span></td><td class='num'>241万</td><td class='num'>86.5</td><td class='num'>2.07</td></tr><tr><td>300981</td><td>中红医疗</td><td class='num'>517万</td><td class='num'><span class="neg">-73.3%</span></td><td class='num'><span class="neg">-4.3%</span></td><td class='num'>5847万</td><td class='num'>-54.5</td><td class='num'>1.31</td></tr><tr><td>001212</td><td>中旗新材</td><td class='num'>373万</td><td class='num'><span class="pos">+187.9%</span></td><td class='num'><span class="pos">+7.7%</span></td><td class='num'>3163万</td><td class='num'>-300.2</td><td class='num'>3.73</td></tr><tr><td>003042</td><td>中农联合</td><td class='num'>200万</td><td class='num'><span class="neg">-50.8%</span></td><td class='num'><span class="pos">+23.7%</span></td><td class='num'>-9923万</td><td class='num'>-13.4</td><td class='num'>1.52</td></tr><tr><td>002465</td><td>海格通信</td><td class='num'>169万</td><td class='num'><span class="neg">-96.3%</span></td><td class='num'><span class="pos">+1.8%</span></td><td class='num'>-4996万</td><td class='num'>-32.6</td><td class='num'>2.36</td></tr><tr><td>002269</td><td>美邦服饰</td><td class='num'>155万</td><td class='num'><span class="neg">-75.7%</span></td><td class='num'><span class="neg">-4.7%</span></td><td class='num'>3925万</td><td class='num'>-14.0</td><td class='num'>16.67</td></tr><tr><td>600715</td><td>文投控股</td><td class='num'>-320万</td><td class='num'><span class="neg">-121.3%</span></td><td class='num'><span class="neg">-48.9%</span></td><td class='num'>—</td><td class='num'>-102.2</td><td class='num'>5.97</td></tr><tr><td>603023</td><td>威帝股份</td><td class='num'>-415万</td><td class='num'><span class="neg">-737.3%</span></td><td class='num'><span class="neg">-18.0%</span></td><td class='num'>—</td><td class='num'>20144.9</td><td class='num'>2.78</td></tr><tr><td>603272</td><td>*ST联翔</td><td class='num'>-579万</td><td class='num'><span class="neg">-1913.9%</span></td><td class='num'><span class="neg">-48.6%</span></td><td class='num'>—</td><td class='num'>-100.6</td><td class='num'>3.23</td></tr><tr><td>688290</td><td>景业智能</td><td class='num'>-943万</td><td class='num'><span class="pos">+24.6%</span></td><td class='num'><span class="pos">+169.6%</span></td><td class='num'>—</td><td class='num'>-245.7</td><td class='num'>5.29</td></tr><tr><td>002403</td><td>爱仕达</td><td class='num'>-1088万</td><td class='num'><span class="neg">-266.7%</span></td><td class='num'><span class="pos">+7.6%</span></td><td class='num'>—</td><td class='num'>-14.0</td><td class='num'>2.36</td></tr><tr><td>603028</td><td>赛福天</td><td class='num'>-1204万</td><td class='num'><span class="neg">-31.6%</span></td><td class='num'><span class="neg">-24.8%</span></td><td class='num'>—</td><td class='num'>-38.4</td><td class='num'>4.20</td></tr><tr><td>002719</td><td>ST麦趣</td><td class='num'>-1347万</td><td class='num'><span class="neg">-1854.6%</span></td><td class='num'><span class="neg">-13.8%</span></td><td class='num'>—</td><td class='num'>-8.7</td><td class='num'>9.36</td></tr><tr><td>600381</td><td>*ST春天</td><td class='num'>-1628万</td><td class='num'><span class="neg">-281.9%</span></td><td class='num'><span class="neg">-47.6%</span></td><td class='num'>—</td><td class='num'>-40.1</td><td class='num'>2.56</td></tr><tr><td>002766</td><td>索菱股份</td><td class='num'>-1864万</td><td class='num'><span class="neg">-3266.8%</span></td><td class='num'><span class="neg">-55.2%</span></td><td class='num'>—</td><td class='num'>-47.4</td><td class='num'>3.31</td></tr><tr><td>600212</td><td>绿能慧充</td><td class='num'>-2085万</td><td class='num'><span class="neg">-147.0%</span></td><td class='num'><span class="pos">+48.2%</span></td><td class='num'>—</td><td class='num'>1780.1</td><td class='num'>6.63</td></tr><tr><td>002905</td><td>金逸影视</td><td class='num'>-2201万</td><td class='num'><span class="neg">-120.6%</span></td><td class='num'><span class="neg">-51.5%</span></td><td class='num'>—</td><td class='num'>-28.8</td><td class='num'>43.56</td></tr><tr><td>002943</td><td>宇晶股份</td><td class='num'>-2322万</td><td class='num'><span class="pos">+45.2%</span></td><td class='num'><span class="neg">-42.0%</span></td><td class='num'>—</td><td class='num'>288.8</td><td class='num'>11.09</td></tr><tr><td>000789</td><td>万年青</td><td class='num'>-2328万</td><td class='num'><span class="neg">-143.1%</span></td><td class='num'><span class="neg">-24.0%</span></td><td class='num'>—</td><td class='num'>-122.1</td><td class='num'>0.50</td></tr><tr><td>000911</td><td>*ST广糖</td><td class='num'>-2600万</td><td class='num'><span class="neg">-458.0%</span></td><td class='num'><span class="pos">+6.4%</span></td><td class='num'>—</td><td class='num'>-11.7</td><td class='num'>-19.78</td></tr><tr><td>601616</td><td>广电电气</td><td class='num'>-2648万</td><td class='num'><span class="neg">-1902.3%</span></td><td class='num'><span class="pos">+26.0%</span></td><td class='num'>—</td><td class='num'>-53.4</td><td class='num'>1.31</td></tr><tr><td>600716</td><td>凤凰股份</td><td class='num'>-2813万</td><td class='num'><span class="neg">-2129.8%</span></td><td class='num'><span class="neg">-28.9%</span></td><td class='num'>—</td><td class='num'>-7.7</td><td class='num'>0.72</td></tr><tr><td>605199</td><td>ST葫芦娃</td><td class='num'>-2841万</td><td class='num'><span class="neg">-216.0%</span></td><td class='num'><span class="neg">-56.6%</span></td><td class='num'>—</td><td class='num'>-7.1</td><td class='num'>6.29</td></tr><tr><td>605008</td><td>长鸿高科</td><td class='num'>-2890万</td><td class='num'><span class="neg">-75.7%</span></td><td class='num'><span class="pos">+11.1%</span></td><td class='num'>—</td><td class='num'>-366.1</td><td class='num'>3.83</td></tr><tr><td>000720</td><td>新能泰山</td><td class='num'>-3067万</td><td class='num'><span class="neg">-279.4%</span></td><td class='num'><span class="pos">+3.8%</span></td><td class='num'>—</td><td class='num'>-9.4</td><td class='num'>2.48</td></tr><tr><td>000892</td><td>欢瑞世纪</td><td class='num'>-3997万</td><td class='num'><span class="neg">-874.5%</span></td><td class='num'><span class="neg">-6.3%</span></td><td class='num'>—</td><td class='num'>-14.2</td><td class='num'>6.75</td></tr><tr><td>600330</td><td>天通股份</td><td class='num'>-4436万</td><td class='num'><span class="neg">-192.2%</span></td><td class='num'><span class="pos">+12.7%</span></td><td class='num'>—</td><td class='num'>-111.3</td><td class='num'>3.66</td></tr><tr><td>603169</td><td>兰石重装</td><td class='num'>-4541万</td><td class='num'><span class="neg">-35.0%</span></td><td class='num'><span class="neg">-16.0%</span></td><td class='num'>—</td><td class='num'>-14.7</td><td class='num'>3.35</td></tr><tr><td>603886</td><td>元祖股份</td><td class='num'>-7023万</td><td class='num'><span class="neg">-180.7%</span></td><td class='num'><span class="neg">-1.4%</span></td><td class='num'>—</td><td class='num'>27.0</td><td class='num'>1.72</td></tr><tr><td>002828</td><td>贝肯能源</td><td class='num'>-7322万</td><td class='num'><span class="neg">-1557.7%</span></td><td class='num'><span class="neg">-18.2%</span></td><td class='num'>—</td><td class='num'>-41.9</td><td class='num'>3.59</td></tr><tr><td>603348</td><td>文灿股份</td><td class='num'>-7978万</td><td class='num'><span class="neg">-2166.6%</span></td><td class='num'><span class="pos">+3.3%</span></td><td class='num'>—</td><td class='num'>-10.4</td><td class='num'>1.15</td></tr><tr><td>000012</td><td>南  玻Ａ</td><td class='num'>-1.0亿</td><td class='num'><span class="neg">-1226.9%</span></td><td class='num'><span class="neg">-2.6%</span></td><td class='num'>—</td><td class='num'>1050.0</td><td class='num'>0.90</td></tr><tr><td>600758</td><td>辽宁能源</td><td class='num'>-1.2亿</td><td class='num'><span class="neg">-222.5%</span></td><td class='num'><span class="neg">-27.4%</span></td><td class='num'>—</td><td class='num'>-9.6</td><td class='num'>0.87</td></tr><tr><td>002368</td><td>太极股份</td><td class='num'>-1.2亿</td><td class='num'><span class="neg">-4296.2%</span></td><td class='num'><span class="neg">-36.6%</span></td><td class='num'>—</td><td class='num'>-10.2</td><td class='num'>2.26</td></tr><tr><td>300765</td><td>石药创新</td><td class='num'>-1.3亿</td><td class='num'><span class="pos">+8.8%</span></td><td class='num'><span class="pos">+40.8%</span></td><td class='num'>—</td><td class='num'>-187.7</td><td class='num'>22.44</td></tr><tr><td>000539</td><td>粤电力Ａ</td><td class='num'>-1.8亿</td><td class='num'><span class="pos">+62.5%</span></td><td class='num'><span class="pos">+7.4%</span></td><td class='num'>—</td><td class='num'>38.0</td><td class='num'>1.35</td></tr><tr><td>000735</td><td>罗 牛 山</td><td class='num'>-1.8亿</td><td class='num'><span class="neg">-1180.6%</span></td><td class='num'><span class="pos">+29.9%</span></td><td class='num'>—</td><td class='num'>-290.6</td><td class='num'>1.41</td></tr><tr><td>001201</td><td>东瑞股份</td><td class='num'>-1.9亿</td><td class='num'><span class="neg">-3180.1%</span></td><td class='num'><span class="pos">+26.0%</span></td><td class='num'>—</td><td class='num'>-8.6</td><td class='num'>0.97</td></tr><tr><td>600180</td><td>*ST瑞茂</td><td class='num'>-3.0亿</td><td class='num'><span class="neg">-952.7%</span></td><td class='num'><span class="neg">-90.7%</span></td><td class='num'>—</td><td class='num'>-0.5</td><td class='num'>0.38</td></tr><tr><td>600975</td><td>新五丰</td><td class='num'>-3.8亿</td><td class='num'><span class="neg">-1515.7%</span></td><td class='num'><span class="neg">-16.0%</span></td><td class='num'>—</td><td class='num'>-4.8</td><td class='num'>3.45</td></tr><tr><td>600567</td><td>山鹰国际</td><td class='num'>-5.1亿</td><td class='num'><span class="neg">-2232.7%</span></td><td class='num'><span class="neg">-8.1%</span></td><td class='num'>—</td><td class='num'>-5.0</td><td class='num'>0.56</td></tr><tr><td>603113</td><td>金能科技</td><td class='num'>-5.9亿</td><td class='num'><span class="neg">-877.7%</span></td><td class='num'><span class="neg">-25.5%</span></td><td class='num'>—</td><td class='num'>-5.9</td><td class='num'>0.52</td></tr><tr><td>600569</td><td>安阳钢铁</td><td class='num'>-8.3亿</td><td class='num'><span class="neg">-5407.9%</span></td><td class='num'><span class="neg">-5.1%</span></td><td class='num'>—</td><td class='num'>-4.3</td><td class='num'>3.51</td></tr><tr><td>600325</td><td>华发股份</td><td class='num'>-10.1亿</td><td class='num'><span class="neg">-533.5%</span></td><td class='num'><span class="neg">-78.2%</span></td><td class='num'>—</td><td class='num'>-0.6</td><td class='num'>0.79</td></tr></tbody>
-    </table>
-  </section>
+  <div class="hint">完整财务表（97 家深挖）点击下方展开</div>
 
   <footer>
-    投资研究 OS v0.3 · 数据源：akshare 免费接口 · 免责声明：此页为研究系统输出，不构成投资建议。前瞻判断存在不确定性，请独立验证后再做决策。
+    投资研究 OS · 数据源：akshare 业绩预告 + baostock 财务/估值 · 免责声明：此页为研究系统输出，不构成投资建议。前瞻判断存在不确定性，请独立验证后再做决策。
   </footer>
 </main>
 </body>
