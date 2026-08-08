@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="全市场候选雷达：利润在变、现金流真实、估值未充分定价的A股候选清单"/>
+<title>投资候选雷达 · 2026-08-08 21:46</title>
+<style>
+:root{
+  --bg:#0b0f14; --panel:#121a22; --panel2:#0e141b; --line:#1f2a35;
+  --ink:#e8eef4; --muted:#8fa0b0; --dim:#5c6b7a;
+  --up:#ff5a5f; --up-bg:rgba(255,90,95,.12);  /* A股红涨 */
+  --down:#2dd4a7; --down-bg:rgba(45,212,167,.12); /* A股绿跌 */
+  --accent:#4da3ff; --accent-bg:rgba(77,163,255,.12);  /* 信任蓝 */
+  --warn:#f5a623; --warn-bg:rgba(245,166,35,.12);
+  --good:#2dd4a7; --watch:#4da3ff;
+}
+*{box-sizing:border-box}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--accent);color:#fff;padding:10px 16px;border-radius:0 0 10px 0;z-index:99;font-size:14px}
+.skip-link:focus{left:0}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Noto Sans SC","PingFang SC",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+main{width:min(760px,calc(100% - 28px));margin:0 auto;padding:28px 0 56px}
+header{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:18px}
+.eyebrow{font-size:11px;letter-spacing:.22em;color:var(--accent);font-weight:700;text-transform:uppercase}
+h1{font-size:clamp(26px,5vw,40px);letter-spacing:-.045em;line-height:1.08;margin:10px 0 10px;font-weight:700}
+header p{color:var(--muted);line-height:1.7;margin:0;font-size:14px}
+.meta-line{font:11px ui-monospace;color:var(--dim);margin-top:10px}
+
+/* 顶部数字条 */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 22px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.stat strong{font-size:24px;display:block;letter-spacing:-.03em}
+.stat span{color:var(--muted);font-size:12px}
+
+/* 决策清单标题 */
+.section-title{margin:26px 0 14px}
+.section-title h2{font-size:18px;margin:0;letter-spacing:-.02em}
+.section-title p{color:var(--muted);font-size:12px;margin:5px 0 0;line-height:1.6}
+
+/* 候选卡片流 */
+.cards{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.card summary{display:block;cursor:pointer;padding:18px 18px 14px;list-style:none;outline:none}
+.card summary::-webkit-details-marker{display:none}
+.card summary:focus-visible{box-shadow:inset 0 0 0 2px var(--accent)}
+.card[open]{border-color:var(--accent)}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.card-name{min-width:0}
+.card-name h3{margin:0;font-size:17px;letter-spacing:-.02em}
+.card-name .code{font:11px ui-monospace;color:var(--dim);margin-top:3px}
+.card-highlight{text-align:right;flex-shrink:0}
+.card-highlight .growth{font-size:22px;font-weight:700;color:var(--up);letter-spacing:-.03em}
+.card-highlight .tagline{font-size:11px;color:var(--muted);margin-top:2px}
+.card-story{margin:12px 0 0;color:var(--ink);font-size:14px;line-height:1.65;background:var(--panel2);border-radius:10px;padding:11px 13px}
+.card-story .why{color:var(--muted);font-size:12px;margin-top:6px;line-height:1.55}
+.card-metrics{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.metric{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:7px 11px;font-size:12px}
+.metric b{display:block;font-size:14px;margin-top:2px}
+.metric span{color:var(--muted);font-size:10px;letter-spacing:.04em}
+.metric .up{color:var(--up)}.metric .down{color:var(--down)}.metric .flat{color:var(--muted)}
+.card-verdict{margin-top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px}
+.pill.good{background:var(--good);color:#06261d}
+.pill.watch{background:var(--accent);color:#04213f}
+.pill.warn{background:var(--warn);color:#2a1a04}
+.card-risk{font-size:12px;color:var(--warn);margin:8px 14px 0;line-height:1.5}
+
+/* 卡片展开详情（原生 details[open]） */
+.detail{margin:0 18px 16px;border-top:1px solid var(--line);padding-top:14px}
+.detail h4{font-size:12px;color:var(--muted);margin:0 0 8px;text-transform:uppercase;letter-spacing:.08em}
+.detail table{width:100%;border-collapse:collapse;font-size:12px}
+.detail th{text-align:left;font-weight:500;color:var(--muted);font-size:12px;text-transform:none;letter-spacing:0;padding:7px 6px;border-bottom:1px solid var(--line)}
+.detail td{padding:7px 6px;border-bottom:1px solid var(--line)}
+.detail tr:last-child td{border-bottom:0}
+.detail td.num{font:12px ui-monospace;text-align:right}
+
+/* 副区块（预告分布 / 机会） */
+.sub-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.sub-panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.sub-panel h3{font-size:14px;margin:0 0 10px;letter-spacing:-.01em}
+.opp-list{list-style:none;margin:0;padding:0}
+.opp-item{padding:10px 0;border-bottom:1px solid var(--line)}
+.opp-item:last-child{border-bottom:0}
+.opp-item h4{margin:0;font-size:13px}
+.opp-item p{margin:5px 0 0;color:var(--muted);font-size:12px;line-height:1.55}
+.opp-score{font-size:18px;font-weight:700;color:var(--accent)}
+.chart-wrap{position:relative;height:200px}
+.sector-cloud{display:flex;flex-wrap:wrap;gap:6px}
+.sector-cloud span{padding:5px 9px;border:1px solid var(--line);border-radius:7px;font-size:11px;background:var(--panel2);color:var(--muted)}
+.empty{padding:26px 10px;color:var(--muted);font-size:13px;text-align:center}
+footer{border-top:1px solid var(--line);margin-top:30px;padding-top:18px;color:var(--dim);font-size:11px;line-height:1.7}
+.hint{text-align:center;color:var(--dim);font-size:11px;margin-top:10px}
+@media(max-width:560px){.stats{grid-template-columns:repeat(3,1fr)}.sub-grid{grid-template-columns:1fr}.card-highlight .growth{font-size:19px}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#cand-heading">跳到候选清单</a>
+<main>
+  <header>
+    <div>
+      <div class="eyebrow">投资研究 · 候选雷达</div>
+      <h1>今天该关注谁</h1>
+      <p>从全市场找利润在变、现金流真实、市场还没充分定价的票。点卡片看财务明细。</p>
+      <div class="meta-line">数据截止 2026-08-08 21:46 · 数据源：业绩预告 + baostock 财务/估值</div>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div class="stat"><strong>0</strong><span>研究机会</span></div>
+    <div class="stat"><strong>8</strong><span>候选中</span></div>
+    <div class="stat"><strong>5539</strong><span>覆盖公司</span></div>
+  </section>
+
+  
+<section class="section-title" aria-labelledby="cand-heading">
+  <h2 id="cand-heading">候选清单</h2>
+  <p>利润在变 × 现金流真实 × 估值未充分定价 · 按性价比（利润增速/PE）排序 · 点按卡片看财务明细</p>
+</section>
+<ul class="cards">
+<li class="card">
+  <details>
+    <summary aria-label="好想你，利润暴增27倍，判定值得深挖">
+      <div class="card-top">
+        <div class="card-name">
+          <h3>好想你</h3>
+          <div class="code">002582</div>
+        </div>
+        <div class="card-highlight">
+          <div class="growth" aria-hidden="true">利润暴增27倍</div>
+          <div class="tagline"><span class="pos">+2701.0%</span></div>
+        </div>
+      </div>
+      <div class="card-story">
+        <div class="why"></div>
+        <div style="margin-top:8px">报告期内,归属于上市公司股东的净利润同比大幅增加,主要系参股公司湖南鸣鸣很忙商业连锁股份有限公司(以下简称“鸣鸣很忙”)公允价值增加,非经常性损益增加约8亿元。公司营业收入增长,毛利率提升,员工持股计划计提费用、宣传推广费用增加,以及因鸣鸣…</div>
+      </div>
+      <div class="card-metrics">
+        <div class="metric"><span>回本年限</span><b class="flat">约2年回本</b></div>
+        <div class="metric"><span>现金流</span><b class="up">▲ 经营现金流为正</b></div>
+        <div class="metric"><span>市值</span><b class="flat">45.3亿</b></div>
+      </div>
+      <div class="card-verdict">
+        <span class="pill good">判定：值得深挖</span>
+        <span style="color:var(--dim);font-size:11px" aria-hidden="true">点按展开财务明细</span>
+      </div>
+      
+    </summary>
+    <div class="detail">
+      <h4>财务明细（最近一期）</h4>
+      <table>
+        <caption style="position:absolute;left:-9999px">好想你 财务明细</caption>
+        <tbody><tr><th scope='row'>净利润</th><td class='num'>11.1亿</td></tr><tr><th scope='row'>利润增速</th><td class='num'><span class="pos">+2701.0%</span></td></tr><tr><th scope='row'>收入增速</th><td class='num'>—</td></tr><tr><th scope='row'>经营现金流</th><td class='num'>6764万</td></tr><tr><th scope='row'>PE（回本年数）</th><td class='num'>2.3</td></tr><tr><th scope='row'>PB</th><td class='num'>0.88</td></tr><tr><th scope='row'>市值</th><td class='num'>45.3亿</td></tr></tbody>
+      </table>
+    </div>
+  </details>
+</li>
+<li class="card">
+  <details>
+    <summary aria-label="益生股份，利润暴增69倍，判定观察">
+      <div class="card-top">
+        <div class="card-name">
+          <h3>益生股份</h3>
+          <div class="code">002458</div>
+        </div>
+        <div class="card-highlight">
+          <div class="growth" aria-hidden="true">利润暴增69倍</div>
+          <div class="tagline"><span class="pos">+6949.8%</span></div>
+        </div>
+      </div>
+      <div class="card-story">
+        <div class="why"></div>
+        <div style="margin-top:8px">报告期内,公司预计实现归属于上市公司股东的净利润为27,000.00万元-30,000.00万元,业绩大幅增长主要系白羽肉鸡行业景气度上行,公司主营的白羽肉鸡业务量价齐升,整体盈利水平实现显著增长所致。从经营层面来看,2025年公司祖代白羽…</div>
+      </div>
+      <div class="card-metrics">
+        <div class="metric"><span>回本年限</span><b class="flat">约28年回本</b></div>
+        <div class="metric"><span>现金流</span><b class="up">▲ 经营现金流为正</b></div>
+        <div class="metric"><span>市值</span><b class="flat">100.5亿</b></div>
+      </div>
+      <div class="card-verdict">
+        <span class="pill watch">判定：观察</span>
+        <span style="color:var(--dim);font-size:11px" aria-hidden="true">点按展开财务明细</span>
+      </div>
+      
+    </summary>
+    <div class="detail">
+      <h4>财务明细（最近一期）</h4>
+      <table>
+        <caption style="position:absolute;left:-9999px">益生股份 财务明细</caption>
+        <tbody><tr><th scope='row'>净利润</th><td class='num'>3.1亿</td></tr><tr><th scope='row'>利润增速</th><td class='num'><span class="pos">+6949.8%</span></td></tr><tr><th scope='row'>收入增速</th><td class='num'>—</td></tr><tr><th scope='row'>经营现金流</th><td class='num'>4.6亿</td></tr><tr><th scope='row'>PE（回本年数）</th><td class='num'>27.8</td></tr><tr><th scope='row'>PB</th><td class='num'>2.80</td></tr><tr><th scope='row'>市值</th><td class='num'>100.5亿</td></tr></tbody>
+      </table>
+    </div>
+  </details>
+</li>
+<li class="card">
+  <details>
+    <summary aria-label="香农芯创，利润暴增97倍，判定观察">
+      <div class="card-top">
+        <div class="card-name">
+          <h3>香农芯创</h3>
+          <div class="code">300475</div>
+        </div>
+        <div class="card-highlight">
+          <div class="growth" aria-hidden="true">利润暴增97倍</div>
+          <div class="tagline"><span class="pos">+9661.6%</span></div>
+        </div>
+      </div>
+      <div class="card-story">
+        <div class="why"></div>
+        <div style="margin-top:8px">2026年上半年,受人工智能相关需求增长影响,互联网数据中心等领域对企业级存储产品的需求持续增加,存储芯片行业保持高景气度,相关产品价格较上年同期稳步上涨。公司电子元器件分销业务销售综合毛利率同比提高,带动公司盈利水平大幅提升。同时,公司自…</div>
+      </div>
+      <div class="card-metrics">
+        <div class="metric"><span>回本年限</span><b class="flat">约40年回本</b></div>
+        <div class="metric"><span>现金流</span><b class="up">▲ 经营现金流为正</b></div>
+        <div class="metric"><span>市值</span><b class="flat">736.0亿</b></div>
+      </div>
+      <div class="card-verdict">
+        <span class="pill watch">判定：观察</span>
+        <span style="color:var(--dim);font-size:11px" aria-hidden="true">点按展开财务明细</span>
+      </div>
+      <div class="card-risk">⚠️ PE 40 已偏高——利润暴增可能已被市场部分定价。</div>
+    </summary>
+    <div class="detail">
+      <h4>财务明细（最近一期）</h4>
+      <table>
+        <caption style="position:absolute;left:-9999px">香农芯创 财务明细</caption>
+        <tbody><tr><th scope='row'>净利润</th><td class='num'>13.4亿</td></tr><tr><th scope='row'>利润增速</th><td class='num'><span class="pos">+9661.6%</span></td></tr><tr><th scope='row'>收入增速</th><td class='num'>—</td></tr><tr><th scope='row'>经营现金流</th><td class='num'>26.4亿</td></tr><tr><th scope='row'>PE（回本年数）</th><td class='num'>40.2</td></tr><tr><th scope='row'>PB</th><td class='num'>15.33</td></tr><tr><th scope='row'>市值</th><td class='num'>736.0亿</td></tr></tbody>
+      </table>
+    </div>
+  </details>
+</li>
+<li class="card">
+  <details>
+    <summary aria-label="上海雅仕，利润暴增4倍，判定观察">
+      <div class="card-top">
+        <div class="card-name">
+          <h3>上海雅仕</h3>
+          <div class="code">603329</div>
+        </div>
+        <div class="card-highlight">
+          <div class="growth" aria-hidden="true">利润暴增4倍</div>
+          <div class="tagline"><span class="pos">+376.2%</span></div>
+        </div>
+      </div>
+      <div class="card-story">
+        <div class="why"></div>
+        <div style="margin-top:8px">2026年上半年,公司持续聚焦核心主业,强化业务风险管控。供应链执行贸易业务方面,核心品种硫磺市场均价较上年同期显著上行,叠加销量增长,共同推动营业利润实现有效提升。同时,公司深化全面预算管理,健全费用过程监控与动态调整机制,推进成本精细化…</div>
+      </div>
+      <div class="card-metrics">
+        <div class="metric"><span>回本年限</span><b class="flat">约36年回本</b></div>
+        <div class="metric"><span>现金流</span><b class="up">▲ 经营现金流为正</b></div>
+        <div class="metric"><span>市值</span><b class="flat">20.5亿</b></div>
+      </div>
+      <div class="card-verdict">
+        <span class="pill watch">判定：观察</span>
+        <span style="color:var(--dim);font-size:11px" aria-hidden="true">点按展开财务明细</span>
+      </div>
+      
+    </summary>
+    <div class="detail">
+      <h4>财务明细（最近一期）</h4>
+      <table>
+        <caption style="position:absolute;left:-9999px">上海雅仕 财务明细</caption>
+        <tbody><tr><th scope='row'>净利润</th><td class='num'>4059万</td></tr><tr><th scope='row'>利润增速</th><td class='num'><span class="pos">+376.2%</span></td></tr><tr><th scope='row'>收入增速</th><td class='num'>—</td></tr><tr><th scope='row'>经营现金流</th><td class='num'>3295万</td></tr><tr><th scope='row'>PE（回本年数）</th><td class='num'>36.2</td></tr><tr><th scope='row'>PB</th><td class='num'>1.68</td></tr><tr><th scope='row'>市值</th><td class='num'>20.5亿</td></tr></tbody>
+      </table>
+    </div>
+  </details>
+</li>
+<li class="card">
+  <details>
+    <summary aria-label="天齐锂业，利润暴增3倍，判定观察">
+      <div class="card-top">
+        <div class="card-name">
+          <h3>天齐锂业</h3>
+          <div class="code">002466</div>
+        </div>
+        <div class="card-highlight">
+          <div class="growth" aria-hidden="true">利润暴增3倍</div>
+          <div class="tagline"><span class="pos">+263.1%</span></div>
+        </div>
+      </div>
+      <div class="card-story">
+        <div class="why"></div>
+        <div style="margin-top:8px">1、天齐锂业股份有限公司(以下简称“公司”)预计本报告期营业收入较上年同期大幅上升。受益于新能源产业发展与下游需求增长等多重利好因素驱动,本报告期公司主要锂产品的销售均价较上年同期均明显增长。2、截至本业绩预告公告日,公司重要的联营公司So…</div>
+      </div>
+      <div class="card-metrics">
+        <div class="metric"><span>回本年限</span><b class="flat">约37年回本</b></div>
+        <div class="metric"><span>现金流</span><b class="up">▲ 经营现金流为正</b></div>
+        <div class="metric"><span>市值</span><b class="flat">785.7亿</b></div>
+      </div>
+      <div class="card-verdict">
+        <span class="pill watch">判定：观察</span>
+        <span style="color:var(--dim);font-size:11px" aria-hidden="true">点按展开财务明细</span>
+      </div>
+      
+    </summary>
+    <div class="detail">
+      <h4>财务明细（最近一期）</h4>
+      <table>
+        <caption style="position:absolute;left:-9999px">天齐锂业 财务明细</caption>
+        <tbody><tr><th scope='row'>净利润</th><td class='num'>28.4亿</td></tr><tr><th scope='row'>利润增速</th><td class='num'><span class="pos">+263.1%</span></td></tr><tr><th scope='row'>收入增速</th><td class='num'>—</td></tr><tr><th scope='row'>经营现金流</th><td class='num'>2.6亿</td></tr><tr><th scope='row'>PE（回本年数）</th><td class='num'>36.7</td></tr><tr><th scope='row'>PB</th><td class='num'>1.77</td></tr><tr><th scope='row'>市值</th><td class='num'>785.7亿</td></tr></tbody>
+      </table>
+    </div>
+  </details>
+</li>
+<li class="card">
+  <details>
+    <summary aria-label="中矿资源，利润暴增3倍，判定观察">
+      <div class="card-top">
+        <div class="card-name">
+          <h3>中矿资源</h3>
+          <div class="code">002738</div>
+        </div>
+        <div class="card-highlight">
+          <div class="growth" aria-hidden="true">利润暴增3倍</div>
+          <div class="tagline"><span class="pos">+309.8%</span></div>
+        </div>
+      </div>
+      <div class="card-story">
+        <div class="why"></div>
+        <div style="margin-top:8px">2026年上半年,公司预计归属于上市公司股东的净利润较上年同期实现较大幅度增长,主要变动原因如下:1.受益于下游储能及动力电池行业的发展,锂盐产品价格同比上行,公司锂电新能源原料开发与利用板块经营效益改善,利润实现同比增长,公司整体盈利水平…</div>
+      </div>
+      <div class="card-metrics">
+        <div class="metric"><span>回本年限</span><b class="flat">约47年回本</b></div>
+        <div class="metric"><span>现金流</span><b class="up">▲ 经营现金流为正</b></div>
+        <div class="metric"><span>市值</span><b class="flat">383.4亿</b></div>
+      </div>
+      <div class="card-verdict">
+        <span class="pill watch">判定：观察</span>
+        <span style="color:var(--dim);font-size:11px" aria-hidden="true">点按展开财务明细</span>
+      </div>
+      <div class="card-risk">⚠️ PE 47 已偏高——利润暴增可能已被市场部分定价。</div>
+    </summary>
+    <div class="detail">
+      <h4>财务明细（最近一期）</h4>
+      <table>
+        <caption style="position:absolute;left:-9999px">中矿资源 财务明细</caption>
+        <tbody><tr><th scope='row'>净利润</th><td class='num'>5.5亿</td></tr><tr><th scope='row'>利润增速</th><td class='num'><span class="pos">+309.8%</span></td></tr><tr><th scope='row'>收入增速</th><td class='num'>—</td></tr><tr><th scope='row'>经营现金流</th><td class='num'>2169万</td></tr><tr><th scope='row'>PE（回本年数）</th><td class='num'>46.7</td></tr><tr><th scope='row'>PB</th><td class='num'>3.04</td></tr><tr><th scope='row'>市值</th><td class='num'>383.4亿</td></tr></tbody>
+      </table>
+    </div>
+  </details>
+</li>
+<li class="card">
+  <details>
+    <summary aria-label="松发股份，利润暴增3倍，判定观察">
+      <div class="card-top">
+        <div class="card-name">
+          <h3>松发股份</h3>
+          <div class="code">603268</div>
+        </div>
+        <div class="card-highlight">
+          <div class="growth" aria-hidden="true">利润暴增3倍</div>
+          <div class="tagline"><span class="pos">+330.3%</span></div>
+        </div>
+      </div>
+      <div class="card-story">
+        <div class="why"></div>
+        <div style="margin-top:8px">2026上半年,全球造船市场延续高景气周期,环保法规趋严和老龄船替换推动新造船市场量价齐升,公司新签订单规模及船型多元化程度持续攀升,高附加值油轮及集装箱船占比稳步提高。报告期内,公司依托规模大、区位优、运营效率高及产业配套全等综合优势,叠…</div>
+      </div>
+      <div class="card-metrics">
+        <div class="metric"><span>回本年限</span><b class="flat">约53年回本</b></div>
+        <div class="metric"><span>现金流</span><b class="up">▲ 经营现金流为正</b></div>
+        <div class="metric"><span>市值</span><b class="flat">1577.9亿</b></div>
+      </div>
+      <div class="card-verdict">
+        <span class="pill watch">判定：观察</span>
+        <span style="color:var(--dim);font-size:11px" aria-hidden="true">点按展开财务明细</span>
+      </div>
+      <div class="card-risk">⚠️ PE 53 已偏高——利润暴增可能已被市场部分定价。</div>
+    </summary>
+    <div class="detail">
+      <h4>财务明细（最近一期）</h4>
+      <table>
+        <caption style="position:absolute;left:-9999px">松发股份 财务明细</caption>
+        <tbody><tr><th scope='row'>净利润</th><td class='num'>10.9亿</td></tr><tr><th scope='row'>利润增速</th><td class='num'><span class="pos">+330.3%</span></td></tr><tr><th scope='row'>收入增速</th><td class='num'>—</td></tr><tr><th scope='row'>经营现金流</th><td class='num'>40.0亿</td></tr><tr><th scope='row'>PE（回本年数）</th><td class='num'>53.4</td></tr><tr><th scope='row'>PB</th><td class='num'>17.69</td></tr><tr><th scope='row'>市值</th><td class='num'>1577.9亿</td></tr></tbody>
+      </table>
+    </div>
+  </details>
+</li>
+<li class="card">
+  <details>
+    <summary aria-label="宏桥控股，利润增长31%，判定有隐患">
+      <div class="card-top">
+        <div class="card-name">
+          <h3>宏桥控股</h3>
+          <div class="code">002379</div>
+        </div>
+        <div class="card-highlight">
+          <div class="growth" aria-hidden="true">利润增长31%</div>
+          <div class="tagline"><span class="pos">+31.0%</span></div>
+        </div>
+      </div>
+      <div class="card-story">
+        <div class="why"></div>
+        <div style="margin-top:8px">公司业绩增长的主要原因为:2026年上半年,电解铝市场销售价格同比大幅上涨,相关业务毛利实现显著提升;同时,公司本期借款规模较上年同期明显缩减,财务利息支出大幅减少,进一步增厚利润。扣除非经常性损益后的净利润大幅变动的主要原因为:2025年…</div>
+      </div>
+      <div class="card-metrics">
+        <div class="metric"><span>回本年限</span><b class="flat">约13年回本</b></div>
+        <div class="metric"><span>现金流</span><b class="up">▲ 经营现金流为正</b></div>
+        <div class="metric"><span>市值</span><b class="flat">224.5亿</b></div>
+      </div>
+      <div class="card-verdict">
+        <span class="pill warn">判定：有隐患</span>
+        <span style="color:var(--dim);font-size:11px" aria-hidden="true">点按展开财务明细</span>
+      </div>
+      
+    </summary>
+    <div class="detail">
+      <h4>财务明细（最近一期）</h4>
+      <table>
+        <caption style="position:absolute;left:-9999px">宏桥控股 财务明细</caption>
+        <tbody><tr><th scope='row'>净利润</th><td class='num'>67.6亿</td></tr><tr><th scope='row'>利润增速</th><td class='num'><span class="pos">+31.0%</span></td></tr><tr><th scope='row'>收入增速</th><td class='num'>—</td></tr><tr><th scope='row'>经营现金流</th><td class='num'>92.4亿</td></tr><tr><th scope='row'>PE（回本年数）</th><td class='num'>13.1</td></tr><tr><th scope='row'>PB</th><td class='num'>4.93</td></tr><tr><th scope='row'>市值</th><td class='num'>224.5亿</td></tr></tbody>
+      </table>
+    </div>
+  </details>
+</li></ul>
+
+  <section class="sub-grid">
+    <div class="sub-panel">
+      <h3>研究机会</h3>
+      <ul class="opp-list"><div class="empty">当前无研究机会。运行 run-cycle 后此处会展示发现的候选方向。</div></ul>
+    </div>
+    <div class="sub-panel">
+      <h3>业绩预告分布（全市场）</h3>
+      
+<div class="chart-wrap"><canvas id="fc"></canvas></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.getElementById('fc');
+  if (!el || typeof Chart === 'undefined') return;
+  new Chart(el, { type: 'bar', data: {
+    labels: ["预增", "首亏", "增亏", "减亏", "扭亏", "预减", "略增", "续亏", "略减", "续盈"],
+    datasets: [{ label: '预告公司数', data: [1083, 522, 499, 449, 402, 387, 180, 144, 63, 25],
+      backgroundColor: '#4da3ff', borderRadius: 5, barPercentage: .7 }]
+  }, options: { responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, title: { display: true, text: '业绩预告类型分布（全市场）', color: '#8fa0b0', font: { size: 12 } } },
+    scales: { y: { beginAtZero: true, ticks: { color: '#5c6b7a' }, grid: { color: '#1f2a35' } },
+              x: { ticks: { color: '#8fa0b0' }, grid: { display: false } } } } });
+});
+</script>
+    </div>
+  </section>
+
+  <div class="hint">完整财务表（97 家深挖）点击下方展开</div>
+
+  <footer>
+    投资研究 OS · 数据源：akshare 业绩预告 + baostock 财务/估值 · 免责声明：此页为研究系统输出，不构成投资建议。前瞻判断存在不确定性，请独立验证后再做决策。
+  </footer>
+</main>
+</body>
+</html>
