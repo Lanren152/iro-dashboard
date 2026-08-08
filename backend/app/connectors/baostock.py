@@ -35,7 +35,7 @@ Market snapshot (``data_kind="market"``):
 from __future__ import annotations
 
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Any
 
 from .base import CompanySnapshotInput
@@ -113,7 +113,15 @@ class BaostockConnector:
     ):
         self.tickers = sorted(set(tickers or []))
         today = datetime.now(timezone.utc)
-        self.trade_date = trade_date or today.strftime("%Y-%m-%d")
+        # baostock only has data for trading days; walk back to the most recent
+        # weekday so weekend runs still get a quote (A-share holidays are rare
+        # enough that the weekday fallback is acceptable for snapshots).
+        day = today
+        for _ in range(10):
+            if day.weekday() < 5:  # Mon-Fri
+                break
+            day = day - timedelta(days=1)
+        self.trade_date = trade_date or day.strftime("%Y-%m-%d")
         self.period = today.replace(hour=0, minute=0, second=0, microsecond=0)
         self.quarters = quarters
         self.timeout_seconds = timeout_seconds
