@@ -130,6 +130,10 @@ def sync_valuation(
     connector = BaostockConnector(
         tickers=tickers,
         trade_date=trade_date or settings.baostock_trade_date or None,
+        # Enrichment (revenue YoY / order growth from Sina) is slow and Sina is
+        # unreliable from cloud runners; the three-layer funnel only needs
+        # profit growth + cash flow + PE, all of which baostock provides.
+        enrich_sina=False,
     )
     result = IngestionService(session).ingest(connector)
     return {
